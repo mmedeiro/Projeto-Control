@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Lista" representedClassName=".Lista" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="limite" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="produtos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Produtos" inverseName="lista" inverseEntity="Produtos" syncable="YES"/>
+    </entity>
+    <entity name="Produtos" representedClassName=".Produtos" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="lista" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lista" inverseName="produtos" inverseEntity="Lista" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Lista" positionX="-9" positionY="36" width="128" height="105"/>
+        <element name="Produtos" positionX="-9" positionY="36" width="128" height="105"/>
+    </elements>
+</model>

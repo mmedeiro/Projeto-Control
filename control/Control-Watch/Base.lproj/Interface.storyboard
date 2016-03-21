@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Inicial Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InicialController" customModule="Control_Watch_Extension">
+                    <items>
+                        <label width="136" height="42.5" alignment="left" text="Bem - vindo ao control" textAlignment="center" numberOfLines="2" id="hfj-TJ-Dz3"/>
+                        <button width="1" alignment="left" title="Fixo" id="8bI-qS-YXv">
+                            <connections>
+                                <segue destination="xdg-Vd-l7w" kind="push" id="v0n-TR-L0s"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Ilimitado" id="Qih-xI-CKf">
+                            <connections>
+                                <segue destination="pCi-Vr-9NO" kind="push" id="89y-Ty-qv3"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="gastoFixo" destination="8bI-qS-YXv" id="sDG-vM-AF5"/>
+                        <outlet property="gastoIlimitado" destination="Qih-xI-CKf" id="RXQ-4h-8Tv"/>
+                        <outlet property="labelBemVindo" destination="hfj-TJ-Dz3" id="ZiZ-Ef-e2d"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Done-->
+        <scene sceneID="R0m-VP-4vt">
+            <objects>
+                <controller identifier="numericKeyboard" title="Done" id="QKX-3x-CSC" customClass="NumberPadController" customModule="Control_Watch_Extension">
+                    <items>
+                        <group width="1" height="30" alignment="left" id="cca-68-HDh">
+                            <items>
+                                <button width="0.33300000000000002" alignment="right" title="C" id="Bdk-CH-ZpM">
+                                    <connections>
+                                        <action selector="clearTapped" destination="QKX-3x-CSC" id="kIk-at-tvJ"/>
+                                    </connections>
+                                </button>
+                                <label width="0.66600000000000004" height="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="right" id="dh2-eJ-uCe"/>
+                            </items>
+                            <variation key="device=watch38mm" height="22"/>
+                        </group>
+                        <group width="1" height="30" alignment="left" id="rn1-hh-KuZ">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="1" id="yau-2W-3dZ">
+                                    <connections>
+                                        <action selector="oneTapped" destination="QKX-3x-CSC" id="cVS-YE-Wmn"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="2" id="rUN-pA-cXi">
+                                    <connections>
+                                        <action selector="twoTapped" destination="QKX-3x-CSC" id="icF-Pw-zCA"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="3" id="gPC-rp-cGV">
+                                    <connections>
+                                        <action selector="threeTapped" destination="QKX-3x-CSC" id="vyb-zD-Ebb"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="30" alignment="left" id="5cM-dm-PaQ">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="4" id="zbl-ZH-eoX">
+                                    <connections>
+                                        <action selector="fourTapped" destination="QKX-3x-CSC" id="lBA-6P-FfO"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="5" id="jv8-TV-h6G">
+                                    <connections>
+                                        <action selector="fiveTapped" destination="QKX-3x-CSC" id="5ti-L8-Ad3"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="6" id="e4h-pa-CTD">
+                                    <connections>
+                                        <action selector="sixTapped" destination="QKX-3x-CSC" id="DD7-gS-lu9"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="30" alignment="left" id="MQf-ZW-AYw">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="7" id="lqe-Z9-aWo">
+                                    <connections>
+                                        <action selector="sevenTapped" destination="QKX-3x-CSC" id="Bjh-C4-YL4"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" alignment="left" title="8" id="4ad-hy-L87">
+                                    <connections>
+                                        <action selector="eightTapped" destination="QKX-3x-CSC" id="qhv-LT-vMN"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="9" id="s23-FP-LSd">
+                                    <connections>
+                                        <action selector="nineTapped" destination="QKX-3x-CSC" id="JPt-o0-TNj"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="30" alignment="left" id="ryr-gb-QNV">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="." id="ve0-c4-bHd">
+                                    <connections>
+                                        <action selector="pointTapped" destination="QKX-3x-CSC" id="UzF-nV-gZz"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="0" id="EvK-rE-Awv">
+                                    <connections>
+                                        <action selector="zeroTapped" destination="QKX-3x-CSC" id="fnX-6j-cls"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="✓" id="f4P-8C-flK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="doneTapped" destination="QKX-3x-CSC" id="geZ-1i-ThC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <variation key="device=watch38mm" height="22"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="amountLabel" destination="dh2-eJ-uCe" id="wco-XG-Z0I"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="36"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="6j3-hM-KLY">
+            <objects>
+                <controller id="pCi-Vr-9NO">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="pIj-jM-92M">
+                            <items>
+                                <button width="65" alignment="left" verticalAlignment="center" title="Voz" id="GdD-6d-hpM"/>
+                                <button width="65" alignment="right" verticalAlignment="center" title="Texto" id="bwM-iV-4dm"/>
+                            </items>
+                        </group>
+                        <label alignment="center" verticalAlignment="center" text="Valor já gasto" id="hxQ-Bz-ju2"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="749" y="699"/>
+        </scene>
+        <!--Preco Fixo Controller-->
+        <scene sceneID="Dgv-5K-vSa">
+            <objects>
+                <controller id="hBc-Yb-6c8" customClass="PrecoFixoController" customModule="Control_Watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="uOO-T5-Mop">
+                            <items>
+                                <button width="65" alignment="left" verticalAlignment="center" title="Voz" id="O4W-px-4Uo"/>
+                                <button width="65" alignment="left" verticalAlignment="center" title="Texto" id="dZi-97-MhJ"/>
+                            </items>
+                        </group>
+                        <label alignment="center" text="Total do limite:" id="321-aT-XXL"/>
+                        <label alignment="center" text="Valor já gasto:" id="d0p-dT-8cd"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="749" y="166"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="z4I-fU-SUh">
+            <objects>
+                <controller id="3oF-1t-frc">
+                    <items>
+                        <button width="1" alignment="left" title="Cancelar" id="Io7-vb-tos"/>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Salvar" id="hG7-oa-Snr">
+                            <connections>
+                                <segue destination="4l2-xf-tk2" kind="push" id="EG6-hq-77o"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="997" y="331"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Mmh-zO-YZB">
+            <objects>
+                <controller id="4l2-xf-tk2">
+                    <items>
+                        <label alignment="left" text="Nome da lista:" id="K2d-lF-0wb"/>
+                        <label alignment="left" text="------------------" id="SXk-KR-43D"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Voz" id="Tcp-BV-Xvy"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1250" y="501"/>
+        </scene>
+        <!--Definir Limite Controller-->
+        <scene sceneID="L2Z-7W-pdQ">
+            <objects>
+                <controller id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Control_Watch_Extension">
+                    <items>
+                        <label alignment="center" text="Limite:" id="07T-ox-8oN"/>
+                        <label alignment="center" verticalAlignment="center" text="Digitado..." id="LBD-qA-W1q"/>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="W4P-9A-ZHT">
+                            <items>
+                                <button width="65" alignment="left" verticalAlignment="center" title="Voz " id="6dj-8v-fEL">
+                                    <connections>
+                                        <action selector="dictationAction" destination="xdg-Vd-l7w" id="jvV-nz-8I1"/>
+                                    </connections>
+                                </button>
+                                <button width="65" alignment="right" verticalAlignment="center" title="Texto" id="ffr-Wi-zRy">
+                                    <connections>
+                                        <action selector="textationAction" destination="xdg-Vd-l7w" id="Eq0-Eo-2qh"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="limiteDefinido" destination="LBD-qA-W1q" id="f7d-1C-52y"/>
+                        <segue destination="hBc-Yb-6c8" kind="relationship" relationship="nextPage" id="bwn-DQ-yn8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="490" y="166"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Control_Watch" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="245" y="942"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="245" y="1271"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Control_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="1271"/>
+        </scene>
+    </scenes>
+</document>
