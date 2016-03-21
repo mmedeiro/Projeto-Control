@@ -21,6 +21,9 @@ class NumberPadController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        sourceController = context as! DefinirLimiteController
+        amountLabel.setText("\(sourceController.getDisplayAmount(sourceController.amount))")
+
     }
 
     override func willActivate() {
@@ -112,6 +115,7 @@ class NumberPadController: WKInterfaceController {
             isDecimalAppended = true
         }
     }
+    
     @IBAction func doneTapped() {
     }
 

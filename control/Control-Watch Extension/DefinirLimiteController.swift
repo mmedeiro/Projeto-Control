@@ -24,6 +24,7 @@ class DefinirLimiteController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        limiteDefinido.setText(getDisplayAmount(amount))
     }
 
     override func didDeactivate() {
@@ -37,11 +38,17 @@ class DefinirLimiteController: WKInterfaceController {
             self.limiteDefinido.setText(results?.first as? String)
         }
     }
-    
 
     @IBAction func textationAction() {
         self.presentControllerWithName("numericKeyboard", context: self)
         
         
+    }
+    
+    func getDisplayAmount(value: Double, round: Bool = true) -> String {
+        // Truncate decimal if whole number
+        return value % 1 == 0
+            ? "\(Int(value))"
+            : (round ? String(format: "%.2f", value) : "\(value)")
     }
 }
