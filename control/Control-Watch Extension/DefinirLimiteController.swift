@@ -15,6 +15,7 @@ class DefinirLimiteController: WKInterfaceController {
     var amount = Double(0)
 
     @IBOutlet var limiteDefinido: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -24,12 +25,16 @@ class DefinirLimiteController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        limiteDefinido.setText(getDisplayAmount(amount))
+        loadData()
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    func loadData() {
+        limiteDefinido.setText(getDisplayAmount(amount))
     }
     
     @IBAction func dictationAction() {

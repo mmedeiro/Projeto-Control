@@ -13,8 +13,10 @@ import Foundation
 class NumberPadController: WKInterfaceController {
     
     @IBOutlet var amountLabel: WKInterfaceLabel!
+    
     var isDecimalAppended = false
     var isPointZeroAppended = false
+    
     var sourceController: DefinirLimiteController!
 
     override func awakeWithContext(context: AnyObject?) {
@@ -38,7 +40,7 @@ class NumberPadController: WKInterfaceController {
     
     func appendValue(value: Int){
         let newValue = "\(value)"
-        var currentValue = getDisplayAmount(sourceController.amount, round: false)
+        var currentValue = sourceController.getDisplayAmount(sourceController.amount, round: false)
         
         if currentValue == "0" && !isDecimalAppended {
             currentValue = newValue
@@ -62,6 +64,7 @@ class NumberPadController: WKInterfaceController {
             currentValue += newValue
         }
         
+        sourceController.amount = (currentValue as NSString).doubleValue
         amountLabel.setText(currentValue)
         
     }
@@ -102,12 +105,17 @@ class NumberPadController: WKInterfaceController {
     @IBAction func nineTapped() {
         appendValue(9)
     }
+    
+    
     @IBAction func clearTapped() {
+        sourceController.amount = 0.0
         amountLabel.setText("0")
         isDecimalAppended = false
     }
+    
+    
     @IBAction func pointTapped() {
-        var currentValue = getDisplayAmount(sourceController.amount)
+        var currentValue = sourceController.getDisplayAmount(sourceController.amount)
         
         if currentValue.rangeOfString(".") == nil {
             currentValue += "."
