@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Inicial Controller-->
+        <!--home-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InicialController" customModule="Control_Watch_Extension">
+                <controller identifier="home" id="AgC-eL-Hgc" customClass="InicialController" customModule="Control_Watch_Extension">
                     <items>
                         <label width="136" height="42.5" alignment="left" text="Bem - vindo ao control" textAlignment="center" numberOfLines="2" id="hfj-TJ-Dz3"/>
                         <button width="1" alignment="left" title="Fixo" id="8bI-qS-YXv">
@@ -22,6 +22,7 @@
                             </connections>
                         </button>
                     </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="gastoFixo" destination="8bI-qS-YXv" id="sDG-vM-AF5"/>
                         <outlet property="gastoIlimitado" destination="Qih-xI-CKf" id="RXQ-4h-8Tv"/>
@@ -38,12 +39,12 @@
                     <items>
                         <group width="1" height="30" alignment="left" id="cca-68-HDh">
                             <items>
-                                <button width="0.33300000000000002" alignment="right" title="C" id="Bdk-CH-ZpM">
+                                <button width="0.33300000000000002" height="1" alignment="right" title="c" id="Bdk-CH-ZpM">
                                     <connections>
                                         <action selector="clearTapped" destination="QKX-3x-CSC" id="kIk-at-tvJ"/>
                                     </connections>
                                 </button>
-                                <label width="0.66600000000000004" height="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="right" id="dh2-eJ-uCe"/>
+                                <label width="0.66300000000000003" height="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="right" id="dh2-eJ-uCe"/>
                             </items>
                             <variation key="device=watch38mm" height="22"/>
                         </group>
@@ -116,112 +117,131 @@
                                         <action selector="zeroTapped" destination="QKX-3x-CSC" id="fnX-6j-cls"/>
                                     </connections>
                                 </button>
-                                <button width="0.33300000000000002" height="1" alignment="left" title="✓" id="f4P-8C-flK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </items>
+                            <variation key="device=watch38mm" height="22"/>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="dh2-eJ-uCe" id="wco-XG-Z0I"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="887" y="346.5"/>
+        </scene>
+        <!--ilimitado-->
+        <scene sceneID="6j3-hM-KLY">
+            <objects>
+                <controller identifier="ilimitado" id="pCi-Vr-9NO" customClass="PrecoIlimitadoController" customModule="Control_Watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="pIj-jM-92M">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="center" title="Texto" id="bwM-iV-4dm">
                                     <connections>
-                                        <action selector="doneTapped" destination="QKX-3x-CSC" id="geZ-1i-ThC"/>
+                                        <action selector="textationAction" destination="pCi-Vr-9NO" id="ICR-kc-0Jf"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="center" text="Total" textAlignment="center" id="Xnj-as-Zoe"/>
+                        <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="THw-km-kQh">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="valor" id="hxQ-Bz-ju2"/>
+                            </items>
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="limiteDefinido" destination="hxQ-Bz-ju2" id="7Re-BA-YkM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="490" y="696"/>
+        </scene>
+        <!--idtxt-->
+        <scene sceneID="Dgv-5K-vSa">
+            <objects>
+                <controller identifier="idtxt" id="hBc-Yb-6c8" customClass="PrecoLimitadoInterfaceController" customModule="Control_Watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="uOO-T5-Mop">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="center" title="Texto" id="dZi-97-MhJ">
+                                    <connections>
+                                        <action selector="textationAction" destination="hBc-Yb-6c8" id="cLx-t2-E2D"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Total do limite:" textAlignment="left" id="321-aT-XXL"/>
+                        <label alignment="center" text="Total" id="p3s-hj-uQp"/>
+                        <group width="70" height="70" alignment="center" radius="35" id="oT3-h8-mOc">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Total" textAlignment="center" id="d0p-dT-8cd"/>
+                            </items>
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="limite" destination="321-aT-XXL" id="T79-4G-dqX"/>
+                        <outlet property="quantiaGasta" destination="d0p-dT-8cd" id="qXL-m9-Qev"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="669" y="166"/>
+        </scene>
+        <!--nomearLista-->
+        <scene sceneID="Mmh-zO-YZB">
+            <objects>
+                <controller identifier="nomearLista" id="4l2-xf-tk2" customClass="NomearListaInterfaceController" customModule="Control_Watch_Extension">
+                    <items>
+                        <label alignment="center" text="Nome da lista:" textAlignment="center" id="K2d-lF-0wb"/>
+                        <label alignment="center" text="------------------" textAlignment="center" id="SXk-KR-43D"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="X8E-Ni-4e9">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="center" title="Voz" id="Mt3-cc-CMk">
+                                    <connections>
+                                        <action selector="reconhecimentoDeVoz" destination="4l2-xf-tk2" id="u2Q-mf-qVz"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="nomeDaLista" destination="SXk-KR-43D" id="jET-AE-3Q5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1084" y="347"/>
+        </scene>
+        <!--limitado-->
+        <scene sceneID="L2Z-7W-pdQ">
+            <objects>
+                <controller identifier="limitado" id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Control_Watch_Extension">
+                    <items>
+                        <label alignment="center" text="Limite" textAlignment="center" id="07T-ox-8oN"/>
+                        <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="eIc-7t-kJP">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="valor" textAlignment="center" id="LBD-qA-W1q"/>
+                            </items>
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <group width="1" height="30" alignment="center" verticalAlignment="bottom" id="W4P-9A-ZHT">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="center" title="Texto" id="ffr-Wi-zRy">
+                                    <connections>
+                                        <action selector="textationAction" destination="xdg-Vd-l7w" id="Eq0-Eo-2qh"/>
                                     </connections>
                                 </button>
                             </items>
                             <variation key="device=watch38mm" height="22"/>
                         </group>
                     </items>
-                    <connections>
-                        <outlet property="amountLabel" destination="dh2-eJ-uCe" id="wco-XG-Z0I"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="235" y="36"/>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="6j3-hM-KLY">
-            <objects>
-                <controller id="pCi-Vr-9NO">
-                    <items>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="pIj-jM-92M">
-                            <items>
-                                <button width="65" alignment="left" verticalAlignment="center" title="Voz" id="GdD-6d-hpM"/>
-                                <button width="65" alignment="right" verticalAlignment="center" title="Texto" id="bwM-iV-4dm"/>
-                            </items>
-                        </group>
-                        <label alignment="center" verticalAlignment="center" text="Valor já gasto" id="hxQ-Bz-ju2"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="749" y="699"/>
-        </scene>
-        <!--Preco Fixo Controller-->
-        <scene sceneID="Dgv-5K-vSa">
-            <objects>
-                <controller id="hBc-Yb-6c8" customClass="PrecoFixoController" customModule="Control_Watch_Extension">
-                    <items>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="uOO-T5-Mop">
-                            <items>
-                                <button width="65" alignment="left" verticalAlignment="center" title="Voz" id="O4W-px-4Uo"/>
-                                <button width="65" alignment="left" verticalAlignment="center" title="Texto" id="dZi-97-MhJ"/>
-                            </items>
-                        </group>
-                        <label alignment="center" text="Total do limite:" id="321-aT-XXL"/>
-                        <label alignment="center" text="Valor já gasto:" id="d0p-dT-8cd"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="749" y="166"/>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="z4I-fU-SUh">
-            <objects>
-                <controller id="3oF-1t-frc">
-                    <items>
-                        <button width="1" alignment="left" title="Cancelar" id="Io7-vb-tos"/>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Salvar" id="hG7-oa-Snr">
-                            <connections>
-                                <segue destination="4l2-xf-tk2" kind="push" id="EG6-hq-77o"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="997" y="331"/>
-        </scene>
-        <!--Interface Controller-->
-        <scene sceneID="Mmh-zO-YZB">
-            <objects>
-                <controller id="4l2-xf-tk2">
-                    <items>
-                        <label alignment="left" text="Nome da lista:" id="K2d-lF-0wb"/>
-                        <label alignment="left" text="------------------" id="SXk-KR-43D"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Voz" id="Tcp-BV-Xvy"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="1250" y="501"/>
-        </scene>
-        <!--Definir Limite Controller-->
-        <scene sceneID="L2Z-7W-pdQ">
-            <objects>
-                <controller id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Control_Watch_Extension">
-                    <items>
-                        <label alignment="center" text="Limite:" id="07T-ox-8oN"/>
-                        <label alignment="center" verticalAlignment="center" text="Digitado..." id="LBD-qA-W1q"/>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="W4P-9A-ZHT">
-                            <items>
-                                <button width="65" alignment="left" verticalAlignment="center" title="Voz " id="6dj-8v-fEL">
-                                    <connections>
-                                        <action selector="dictationAction" destination="xdg-Vd-l7w" id="jvV-nz-8I1"/>
-                                    </connections>
-                                </button>
-                                <button width="65" alignment="right" verticalAlignment="center" title="Texto" id="ffr-Wi-zRy">
-                                    <connections>
-                                        <action selector="textationAction" destination="xdg-Vd-l7w" id="Eq0-Eo-2qh"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                    </items>
+                    <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="limiteDefinido" destination="LBD-qA-W1q" id="f7d-1C-52y"/>
-                        <segue destination="hBc-Yb-6c8" kind="relationship" relationship="nextPage" id="bwn-DQ-yn8"/>
                     </connections>
                 </controller>
             </objects>

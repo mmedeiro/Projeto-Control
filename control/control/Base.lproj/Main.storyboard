@@ -450,7 +450,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comanda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-iW-s0U">
-                                <rect key="frame" x="20" y="178" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="178" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NrT-Oa-3Bi"/>
                                 </constraints>

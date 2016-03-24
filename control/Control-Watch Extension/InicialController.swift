@@ -18,10 +18,7 @@ class InicialController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
         // Configure interface objects here.
-        
-        
     }
 
     override func willActivate() {
@@ -33,7 +30,4 @@ class InicialController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
-    
-
 }

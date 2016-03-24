@@ -16,16 +16,37 @@ class NumberPadController: WKInterfaceController {
     
     var isDecimalAppended = false
     var isPointZeroAppended = false
-    
-    var sourceController: DefinirLimiteController!
-
+    var limiteSC: DefinirLimiteController!
+    var ilimitadoSC: PrecoIlimitadoController!
+    var limitadoSC: PrecoLimitadoInterfaceController!
+    var nomeDaClasse: String!
+    var valor: String!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-        sourceController = context as! DefinirLimiteController
-        amountLabel.setText("\(sourceController.getDisplayAmount(sourceController.amount))")
 
+        if context![1] as! String == "DefinirLimiteController"{
+            limiteSC = context![0] as! DefinirLimiteController
+            amountLabel.setText("\(limiteSC.getDisplayAmount(limiteSC.amount))")
+            nomeDaClasse = "limite"
+        } else if context![1] as! String == "PrecoIlimitadoController"{
+           ilimitadoSC = context![0] as! PrecoIlimitadoController
+            amountLabel.setText("\(ilimitadoSC.getDisplayAmount(ilimitadoSC.amount))")
+            nomeDaClasse = "ilimitado"
+        } else if context![1] as! String == "PrecoLimitadoInterfaceController"{
+            limitadoSC = context![0] as! PrecoLimitadoInterfaceController
+            amountLabel.setText("\(limitadoSC.getDisplayAmount(limitadoSC.amount))")
+            nomeDaClasse = "limitado"
+        }
+        
+        if nomeDaClasse == "limite"{
+            limiteSC.amount = 0.0
+        } else if nomeDaClasse == "ilimitado"{
+            ilimitadoSC.amount = 0.0
+        } else if nomeDaClasse == "limitado" {
+            limitadoSC.amount = 0.0
+        }
+        
+        amountLabel.setText("0.0")
     }
 
     override func willActivate() {
@@ -40,7 +61,15 @@ class NumberPadController: WKInterfaceController {
     
     func appendValue(value: Int){
         let newValue = "\(value)"
-        var currentValue = sourceController.getDisplayAmount(sourceController.amount, round: false)
+        var currentValue = String()
+        
+        if nomeDaClasse == "limite"{
+         currentValue = limiteSC.getDisplayAmount(limiteSC.amount, round: false)
+        } else if nomeDaClasse == "ilimitado"{
+        currentValue = ilimitadoSC.getDisplayAmount(ilimitadoSC.amount, round: false)
+        } else if nomeDaClasse == "limitado"{
+        currentValue = limitadoSC.getDisplayAmount(limitadoSC.amount, round: false)
+        }
         
         if currentValue == "0" && !isDecimalAppended {
             currentValue = newValue
@@ -64,9 +93,16 @@ class NumberPadController: WKInterfaceController {
             currentValue += newValue
         }
         
-        sourceController.amount = (currentValue as NSString).doubleValue
-        amountLabel.setText(currentValue)
+        if nomeDaClasse == "limite"{
+            limiteSC.amount = (currentValue as NSString).doubleValue
+        } else if nomeDaClasse == "ilimitado"{
+            ilimitadoSC.amount = (currentValue as NSString).doubleValue
+        } else if nomeDaClasse == "limitado"{
+            limitadoSC.amount = (currentValue as NSString).doubleValue
+        }
         
+        amountLabel.setText(currentValue)
+        valor = currentValue
     }
     
     func getDisplayAmount(value: Double, round: Bool = true) -> String{
@@ -108,23 +144,39 @@ class NumberPadController: WKInterfaceController {
     
     
     @IBAction func clearTapped() {
-        sourceController.amount = 0.0
+        if nomeDaClasse == "limite"{
+            limiteSC.amount = 0.0
+        } else if nomeDaClasse == "ilimitado"{
+            ilimitadoSC.amount = 0.0
+        } else if nomeDaClasse == "limitado"{
+            limitadoSC.amount = 0.0
+        }
         amountLabel.setText("0")
         isDecimalAppended = false
     }
     
-    
     @IBAction func pointTapped() {
-        var currentValue = sourceController.getDisplayAmount(sourceController.amount)
+        var currentValue =  String()
+        var valor = String()
+        
+        if nomeDaClasse == "limite"{
+            valor = limiteSC.getDisplayAmount(limiteSC.amount)
+        } else if nomeDaClasse == "ilimitado"{
+            valor =  ilimitadoSC.getDisplayAmount(ilimitadoSC.amount)
+        } else if nomeDaClasse == "limitado"{
+            valor = limitadoSC.getDisplayAmount(limitadoSC.amount)
+        }
         
         if currentValue.rangeOfString(".") == nil {
-            currentValue += "."
+            currentValue = valor + "."
             amountLabel.setText(currentValue)
             isDecimalAppended = true
         }
     }
     
     @IBAction func doneTapped() {
+        if nomeDaClasse == "limite"{
+            self.presentControllerWithName("idtxt", context: limiteSC.getDisplayAmount(limiteSC.amount))
+        }
     }
-
 }

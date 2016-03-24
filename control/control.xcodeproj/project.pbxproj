@@ -15,6 +15,8 @@
 		377361741C9782FA007236BF /* ListaDeGastosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361731C9782FA007236BF /* ListaDeGastosTableViewController.swift */; };
 		377361771C9B15E6007236BF /* Produtos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361751C9B15E6007236BF /* Produtos+CoreDataProperties.swift */; };
 		377361781C9B15E6007236BF /* Produtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361761C9B15E6007236BF /* Produtos.swift */; };
+		37B288421CA1D86000832002 /* PrecoLimitadoInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B288411CA1D86000832002 /* PrecoLimitadoInterfaceController.swift */; };
+		37C369AC1CA322270056B41B /* NomearListaInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C369AB1CA322270056B41B /* NomearListaInterfaceController.swift */; };
 		37CB44771C93AE5400316803 /* PrecoIlimitadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB44761C93AE5400316803 /* PrecoIlimitadoViewController.swift */; };
 		37CB44791C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CB44781C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift */; };
 		37E08BDF1C63BBD500369E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E08BDE1C63BBD500369E84 /* AppDelegate.swift */; };
@@ -35,7 +37,7 @@
 		4B004C461C9C4B4C002610C5 /* Control-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4B004C241C9C4B4C002610C5 /* Control-Watch.app */; };
 		4B004C501C9C7911002610C5 /* DefinirLimiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */; };
 		4B004C521C9C91EB002610C5 /* NumberPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C511C9C91EB002610C5 /* NumberPadController.swift */; };
-		4B004C541C9C9988002610C5 /* PrecoFixoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C531C9C9988002610C5 /* PrecoFixoController.swift */; };
+		4B004C541C9C9988002610C5 /* PrecoIlimitadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */; };
 		4B3F613E1C989423008BB972 /* control.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F613C1C989423008BB972 /* control.xcdatamodeld */; };
 		4B3F61451C98950D008BB972 /* Lista+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F61411C98950D008BB972 /* Lista+CoreDataProperties.swift */; };
 		4B3F61461C98950D008BB972 /* Lista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F61421C98950D008BB972 /* Lista.swift */; };
@@ -110,6 +112,8 @@
 		377361731C9782FA007236BF /* ListaDeGastosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeGastosTableViewController.swift; sourceTree = "<group>"; };
 		377361751C9B15E6007236BF /* Produtos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Produtos+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		377361761C9B15E6007236BF /* Produtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produtos.swift; sourceTree = "<group>"; };
+		37B288411CA1D86000832002 /* PrecoLimitadoInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoLimitadoInterfaceController.swift; sourceTree = "<group>"; };
+		37C369AB1CA322270056B41B /* NomearListaInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NomearListaInterfaceController.swift; sourceTree = "<group>"; };
 		37CB44761C93AE5400316803 /* PrecoIlimitadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoIlimitadoViewController.swift; sourceTree = "<group>"; };
 		37CB44781C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoIlimitadoTableViewCell.swift; sourceTree = "<group>"; };
 		37E08BDB1C63BBD500369E84 /* control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = control.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +143,7 @@
 		4B004C431C9C4B4C002610C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinirLimiteController.swift; sourceTree = "<group>"; };
 		4B004C511C9C91EB002610C5 /* NumberPadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadController.swift; sourceTree = "<group>"; };
-		4B004C531C9C9988002610C5 /* PrecoFixoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoFixoController.swift; sourceTree = "<group>"; };
+		4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoIlimitadoController.swift; sourceTree = "<group>"; };
 		4B3F613D1C989423008BB972 /* control.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = control.xcdatamodel; sourceTree = "<group>"; };
 		4B3F61411C98950D008BB972 /* Lista+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lista+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B3F61421C98950D008BB972 /* Lista.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lista.swift; sourceTree = "<group>"; };
@@ -190,6 +194,15 @@
 				4B3F614C1C9B3AA4008BB972 /* DetalheListaTableViewCell.swift */,
 			);
 			name = celulas;
+			sourceTree = "<group>";
+		};
+		37C369AD1CA322320056B41B /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				4B004C511C9C91EB002610C5 /* NumberPadController.swift */,
+				37C369AB1CA322270056B41B /* NomearListaInterfaceController.swift */,
+			);
+			name = interfaces;
 			sourceTree = "<group>";
 		};
 		37E08BD21C63BBD500369E84 = {
@@ -267,14 +280,15 @@
 		4B004C341C9C4B4C002610C5 /* Control-Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				37C369AD1CA322320056B41B /* interfaces */,
 				4B004C371C9C4B4C002610C5 /* InicialController.swift */,
 				4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */,
 				4B004C391C9C4B4C002610C5 /* ExtensionDelegate.swift */,
 				4B004C3B1C9C4B4C002610C5 /* NotificationController.swift */,
 				4B004C3D1C9C4B4C002610C5 /* GlanceController.swift */,
 				4B004C3F1C9C4B4C002610C5 /* ComplicationController.swift */,
-				4B004C511C9C91EB002610C5 /* NumberPadController.swift */,
-				4B004C531C9C9988002610C5 /* PrecoFixoController.swift */,
+				4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */,
+				37B288411CA1D86000832002 /* PrecoLimitadoInterfaceController.swift */,
 				4B004C411C9C4B4C002610C5 /* Assets.xcassets */,
 				4B004C431C9C4B4C002610C5 /* Info.plist */,
 				4B004C351C9C4B4C002610C5 /* Supporting Files */,
@@ -408,6 +422,7 @@
 				TargetAttributes = {
 					37E08BDA1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 55Z8HFH9WB;
 					};
 					37E08BEE1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;
@@ -419,11 +434,11 @@
 					};
 					4B004C231C9C4B4C002610C5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = GAANZNADLG;
+						DevelopmentTeam = 55Z8HFH9WB;
 					};
 					4B004C2F1C9C4B4C002610C5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = GAANZNADLG;
+						DevelopmentTeam = 55Z8HFH9WB;
 					};
 				};
 			};
@@ -545,8 +560,10 @@
 				4B004C401C9C4B4C002610C5 /* ComplicationController.swift in Sources */,
 				4B004C381C9C4B4C002610C5 /* InicialController.swift in Sources */,
 				4B004C3E1C9C4B4C002610C5 /* GlanceController.swift in Sources */,
+				37B288421CA1D86000832002 /* PrecoLimitadoInterfaceController.swift in Sources */,
+				37C369AC1CA322270056B41B /* NomearListaInterfaceController.swift in Sources */,
 				4B004C521C9C91EB002610C5 /* NumberPadController.swift in Sources */,
-				4B004C541C9C9988002610C5 /* PrecoFixoController.swift in Sources */,
+				4B004C541C9C9988002610C5 /* PrecoIlimitadoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = control/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control;
@@ -701,6 +719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = control/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control;
@@ -798,10 +817,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Control-Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -813,10 +835,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Control-Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -870,6 +895,7 @@
 				4B004C4A1C9C4B4C002610C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B004C4D1C9C4B4C002610C5 /* Build configuration list for PBXNativeTarget "Control-Watch" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +904,7 @@
 				4B004C481C9C4B4C002610C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

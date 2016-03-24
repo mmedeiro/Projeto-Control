@@ -19,12 +19,17 @@ class DefinirLimiteController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
+
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        if amount != 0{
+            //rootview
+        DefinirLimiteController.reloadRootControllersWithNames(["idtxt"], contexts: [amount])
+//    self.pushControllerWithName("idtxt", context: amount)
+        }
         loadData()
     }
 
@@ -34,19 +39,20 @@ class DefinirLimiteController: WKInterfaceController {
     }
     
     func loadData() {
-        limiteDefinido.setText(getDisplayAmount(amount))
+       limiteDefinido.setText(getDisplayAmount(amount))
+//        self.pushControllerWithName("PrecoLimitadoInterfaceController", context: limiteDefinido)
     }
     
-    @IBAction func dictationAction() {
-        presentTextInputControllerWithSuggestions(["R$2,75","R$50,00", "R$100,00"], allowedInputMode: .Plain) { (results) -> Void in
-            
-            self.limiteDefinido.setText(results?.first as? String)
-        }
-    }
+//    @IBAction func dictationAction() {
+//        presentTextInputControllerWithSuggestions(["R$2,75","R$50,00", "R$100,00"], allowedInputMode: .Plain) { (results) -> Void in
+//            
+//            self.limiteDefinido.setText(results?.first as? String)
+//        }
+//    }
 
     @IBAction func textationAction() {
-        self.presentControllerWithName("numericKeyboard", context: self)
-        
+        let array = [self, "DefinirLimiteController"]
+        self.presentControllerWithName("numericKeyboard", context: array)
         
     }
     
