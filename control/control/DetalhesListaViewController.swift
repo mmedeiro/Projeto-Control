@@ -14,6 +14,7 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
     var lista: Lista!
     var indice: Int!
     var soma: Double!
+    
     @IBOutlet weak var valorLimite: UILabel!
     @IBOutlet weak var valorGasto: UILabel!
     @IBOutlet weak var dataLista: UILabel!
@@ -23,7 +24,6 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         soma = 0
-        
         nomeLista.text = lista.nome?.capitalizedString
         dataLista.text = "\(lista.data)"
         

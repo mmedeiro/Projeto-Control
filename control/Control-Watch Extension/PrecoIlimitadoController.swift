@@ -25,7 +25,7 @@ class PrecoIlimitadoController: WKInterfaceController {
         super.awakeWithContext(context)
 //        PrecoIlimitadoController.reloadRootControllersWithNames(["ilimitado"], contexts: nil)
 
-        addMenuItemWithItemIcon(.Accept, title: "Salvar", action: "salvar")
+        addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(PrecoIlimitadoController.salvar))
         msg = ""
     }
 
@@ -84,7 +84,7 @@ class PrecoIlimitadoController: WKInterfaceController {
         //salvar nsuserdefault...
 //        udValor.setValue(total, forKeyPath: "totalLista")
 //        udValor.synchronize()
-        
-        self.presentControllerWithName("nomearLista", context: nil)
+        let array = [self,"PrecoIlimitadoController"]
+        self.presentControllerWithName("nomearLista", context: array)
     }
 }

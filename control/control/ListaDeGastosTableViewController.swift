@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ListaDeGastosTableViewController: UITableViewController {
+class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate {
     
     var arrayLista: Array<String> = []
     var arrayData: Array<String> = []
     var arrayTotal: Array<String> = []
     var listas: [Lista] = []
+    var lista: Lista!
     var soma: Double!
     var count = 0
     
@@ -21,8 +23,14 @@ class ListaDeGastosTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBarHidden = false
         
+        if WCSession.isSupported(){
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            print(#function, "Sessão iniciada")
+        }
+        
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
+        myBackButton.addTarget(self, action: #selector(ListaDeGastosTableViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setTitle("< Home", forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
@@ -59,7 +67,7 @@ class ListaDeGastosTableViewController: UITableViewController {
                     }
                 }
                 arrayTotal.append("\(soma)")
-                count++
+                count += 1
             }
         }
         
@@ -112,11 +120,40 @@ class ListaDeGastosTableViewController: UITableViewController {
             ListaManager.sharedInstance.save()
         }
         
+       listas = ListaManager.sharedInstance.buscarListas()
+        
         self.tableView.reloadData()
     }
     
     func popToRoot(sender:UIBarButtonItem){
         self.navigationController!.popToRootViewControllerAnimated(true)
+    }
+
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        guard let nomeLista = message["nomeLista"],
+            let total = message["total"] else {
+                print(#function, "foi")
+                return
+        }
+        print(nomeLista, total)
+        let data = NSDate()
+        
+        lista = ListaManager.sharedInstance.novaLista()
+        lista.nome = nomeLista as? String
+        lista.produtos = total as? NSSet
+        lista.data = data
+        lista.limite = 0
+        ListaManager.sharedInstance.save()
+        listas = ListaManager.sharedInstance.buscarListas()
+        
+        arrayTotal.append("\(total)")
+        arrayLista.append(nomeLista as! String)
+        arrayData.append("\(data)")
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.tableView.reloadData()
+        }
+        
     }
     
     // MARK: - Navigation
@@ -133,4 +170,5 @@ class ListaDeGastosTableViewController: UITableViewController {
             destino.indice = indexPath?.row
         }
     }
+
 }

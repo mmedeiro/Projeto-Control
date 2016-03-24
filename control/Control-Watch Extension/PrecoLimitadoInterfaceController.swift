@@ -27,8 +27,9 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
 //        PrecoLimitadoInterfaceController.reloadRootControllersWithNames(["limitado"], contexts: nil)
 
-        addMenuItemWithItemIcon(.Accept, title: "Salvar", action: "salvar")
-        addMenuItemWithItemIcon(.Resume, title: "Alterar Limite", action: "alterarLimite")
+        
+        addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(PrecoLimitadoInterfaceController.salvar))
+        addMenuItemWithItemIcon(.Resume, title: "Alterar Limite", action: #selector(PrecoLimitadoInterfaceController.alterarLimite))
         valor = context as! Double
         msg = ""
     }
@@ -87,10 +88,12 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
 //        udValor.setValue(total, forKeyPath: "totalLista")
 //        udValor.synchronize()
         
-        self.presentControllerWithName("nomearLista", context: nil)
+        let array = [self,"PrecoLimitadoController"]
+        self.presentControllerWithName("nomearLista", context: array)
     }
     
      func alterarLimite(){
         self.presentControllerWithName("DefinirLimiteController", context: nil)
     }
+    
 }

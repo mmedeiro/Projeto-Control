@@ -8,19 +8,44 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
-class NomearListaInterfaceController: WKInterfaceController {
+class NomearListaInterfaceController: WKInterfaceController, WCSessionDelegate {
 
 //    let ud = NSUserDefaults.standardUserDefaults()
+    var ilimitadoSC : PrecoIlimitadoController!
+    var limitadoSC: PrecoLimitadoInterfaceController!
+    var totalLista : String!
+    var nomeDaClasse: String!
+    var nome = String()
     
     @IBOutlet var nomeDaLista: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        addMenuItemWithItemIcon(.Accept, title: "Salvar", action: "salvar")
+        
         // Configure interface objects here.
-        print("outra tela")
+        if context![1] as! String == "PrecoIlimitadoController"{
+            ilimitadoSC = context![0] as! PrecoIlimitadoController
+            totalLista = ilimitadoSC.getDisplayAmount(ilimitadoSC.total)
+//            nomeDaClasse = "ilimitado"
+        } else if context![1] as! String == "PrecoLimitadoController"{
+            limitadoSC = context![0] as! PrecoLimitadoInterfaceController
+            totalLista = limitadoSC.getDisplayAmount(limitadoSC.total)
+//            nomeDaClasse = "limitado"
+        }
+        
+        if WCSession.isSupported() {
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            print(#function,"SESSÃO ATIVADA")
+            
+            addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(NomearListaInterfaceController.salvar))
+        } else {
+            print(#function, "WCsession não é suportado")
+            presentAlertControllerWithTitle("Erro", message: "Não foi possível ativar a sessão", preferredStyle: .Alert, actions: [])
+        }
     }
 
     override func willActivate() {
@@ -33,21 +58,37 @@ class NomearListaInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
+    func getDisplayAmount(total: Double) -> Double{
+        return total
+    }
+    
     func salvar(){
         //salvar...
+        var dict:[String:String] = [String:String]()
+        
+        dict["nomeLista"] = nome
+        dict["total"] = totalLista
+        
+        print(dict)
+//        WCSession.defaultSession().sendMessage(dict, replyHandler: nil, errorHandler: nil)
+        WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
+            print(#function, "Mensagem enviada")
+            }) { (error) -> Void in
+                print(#function, "Erro ao enviar mensagem: \(error)")
+        }
+        
         let ok = WKAlertAction(title: "ok", style: .Default) { () -> Void in
             WKInterfaceController.reloadRootControllersWithNames(["home"], contexts: nil)
         }
-        //como pegar O NOME REAL? 
-//        ud.setValue(nomeDaLista, forKeyPath: "nomeLista")
-//        ud.synchronize()
         
-        presentAlertControllerWithTitle("Salvo", message: "Sua lista foi salva, veja mais detalhe no seu Iphone", preferredStyle: .Alert, actions: [ok])
+        presentAlertControllerWithTitle("Salvo", message: "Sua lista foi salva, veja mais detalhe no seu iPhone", preferredStyle: .Alert, actions: [ok])
     }
 
     @IBAction func reconhecimentoDeVoz() {
         presentTextInputControllerWithSuggestions(["Mercado", "Restaurante", "Balada", "Bar"], allowedInputMode: .Plain) { (resultados) -> Void in
             self.nomeDaLista.setText(resultados?.first as? String)
+            print(self.nomeDaLista)
+            self.nome = (resultados?.first as? String)!
         }
     }
 }

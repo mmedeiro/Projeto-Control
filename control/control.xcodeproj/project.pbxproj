@@ -422,7 +422,7 @@
 				TargetAttributes = {
 					37E08BDA1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 55Z8HFH9WB;
+						DevelopmentTeam = GAANZNADLG;
 					};
 					37E08BEE1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;
@@ -434,11 +434,11 @@
 					};
 					4B004C231C9C4B4C002610C5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 55Z8HFH9WB;
+						DevelopmentTeam = GAANZNADLG;
 					};
 					4B004C2F1C9C4B4C002610C5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 55Z8HFH9WB;
+						DevelopmentTeam = GAANZNADLG;
 					};
 				};
 			};
@@ -708,10 +708,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = control/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -720,10 +722,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = control/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MackMobile.control;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

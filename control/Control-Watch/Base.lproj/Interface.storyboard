@@ -127,7 +127,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="887" y="346.5"/>
+            <point key="canvasLocation" x="887" y="468.5"/>
         </scene>
         <!--ilimitado-->
         <scene sceneID="6j3-hM-KLY">
@@ -174,7 +174,7 @@
                             </items>
                         </group>
                         <label alignment="left" text="Total do limite:" textAlignment="left" id="321-aT-XXL"/>
-                        <label alignment="center" text="Total" id="p3s-hj-uQp"/>
+                        <label alignment="center" text="Gasto Total" id="p3s-hj-uQp"/>
                         <group width="70" height="70" alignment="center" radius="35" id="oT3-h8-mOc">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="Total" textAlignment="center" id="d0p-dT-8cd"/>
@@ -200,6 +200,7 @@
                         <label alignment="center" text="------------------" textAlignment="center" id="SXk-KR-43D"/>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="X8E-Ni-4e9">
                             <items>
+                                <button width="1" alignment="center" verticalAlignment="center" title="Button" id="4MJ-f3-WRB"/>
                                 <button width="1" alignment="left" verticalAlignment="center" title="Voz" id="Mt3-cc-CMk">
                                     <connections>
                                         <action selector="reconhecimentoDeVoz" destination="4l2-xf-tk2" id="u2Q-mf-qVz"/>
@@ -214,7 +215,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1084" y="347"/>
+            <point key="canvasLocation" x="707" y="461"/>
         </scene>
         <!--limitado-->
         <scene sceneID="L2Z-7W-pdQ">
