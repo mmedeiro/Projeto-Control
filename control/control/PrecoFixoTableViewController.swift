@@ -9,14 +9,14 @@
 import UIKit
 
 class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+    
     var lista: Lista!
     var produto: Produtos!
     var mm = ModeloMetodos()
     var produtos:[Produtos] = []
     var precoFake = String()
     var arrayNomeLista: Array<String> = []
-
+    
     @IBOutlet weak var nomeDaComanda: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var precoEscolhido: UILabel!
@@ -25,7 +25,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBarHidden = false
         valorDoLimite()
         
@@ -35,34 +35,41 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         
         self.lista = ListaManager.sharedInstance.novaLista()
         self.lista.nome = nil
-
+        
         mm.designBotao(precoEscolhido)
+        print(valorDoLimite())
     }
-
+    
     //conf. tabBar
-    override func viewWillAppear(animated: Bool) { self.tabBarController?.tabBar.hidden = true }
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden = true
+    }
     
     override func viewWillDisappear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
-        //caso o usuário sai da lista -> deve-se fazer um alerta para avisa-lo
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-     func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
-
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return produtos.count }
-
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return produtos.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: PrecoFixoDetalhesTableViewCell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! PrecoFixoDetalhesTableViewCell
-
-        cell.descricaoLabel.text = produtos[indexPath.row].nome?.capitalizedString
+        
+        cell.descricaoLabel.text = produtos[indexPath.row].nome!.capitalizedString
         if let numFormatado = produtos[indexPath.row].valor{
             cell.precoLabel.text = "\(numFormatado)"
+            print(numFormatado)
         }
         
         decrementar()
@@ -92,7 +99,20 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         
         return [maisUm]
     }
-
+    
+    
+    func decrementar(){
+        
+        let valorInicial = Double(precoFake)
+        var valorInicialAlterado = valorInicial!
+        for i in produtos{
+            valorInicialAlterado = valorInicialAlterado - Double(i.valor!)
+        }
+        
+        precoEscolhido.text = "\(valorInicialAlterado)"
+    }
+    
+    
     @IBAction func adcItem(sender: AnyObject) {
         
         let alertaNovoItem = UIAlertController(title: nil, message: "", preferredStyle: .Alert)
@@ -118,24 +138,33 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
             
-            let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
-            
-            
-            self.produto = ProdutoManager.sharedInstance.novoProduto()
-            if let numFormatado = formatarNumero{
-                self.produto.valor = Double(numFormatado)
+            if precoTxtField.text == "" {
+                
+                let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
+                alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertaCampoVazio, animated: true, completion: nil)
+                
+            } else {
+                
+                let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
+                
+                
+                self.produto = ProdutoManager.sharedInstance.novoProduto()
+                if let numFormatado = formatarNumero{
+                    self.produto.valor = Double(numFormatado)
+                }
+                self.produto.nome = descricaoTxtField.text
+                self.produto.quantidade = 1
+                self.produto.lista = self.lista
+                
+                ProdutoManager.sharedInstance.save()
+                
+                self.produtos.append(self.produto)
+                
+                self.navigationController?.popToViewController(self, animated: true)
+                
+                self.tableView.reloadData()
             }
-            self.produto.nome = descricaoTxtField.text
-            self.produto.quantidade = 1
-            self.produto.lista = self.lista
-            
-            ProdutoManager.sharedInstance.save()
-            
-            self.produtos.append(self.produto)
-            
-            self.navigationController?.popToViewController(self, animated: true)
-            
-            self.tableView.reloadData()
         })
         
         alertaNovoItem.addAction(cancelar)
@@ -145,7 +174,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
     }
     
     @IBAction func alterarLimite(sender: AnyObject) { valorDoLimite() }
-
+    
     //alterar limite
     func valorDoLimite(){
         let alertaNovoLimite = UIAlertController(title: nil, message: "Defina o limite", preferredStyle: .Alert)
@@ -164,28 +193,40 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
             
-            let formatarNumero = (limiteTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
-            print(formatarNumero)
-            print(limiteTxtField.text)
-            
-            if limiteTxtField.text == "0" || limiteTxtField.text == "" {
-                self.buttonFinalizarItem.enabled = false
-                self.buttonAddItem.enabled = false
+            if limiteTxtField.text == "" {
                 
-                self.precoEscolhido.text = "R$"
+                let alertaSemLimite = UIAlertController(title: nil, message: "Defina o limite de gasto", preferredStyle: .Alert)
+                alertaSemLimite.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertaSemLimite, animated: true, completion: nil)
+                
             } else {
-                self.buttonFinalizarItem.enabled = true
-                self.buttonAddItem.enabled = true
                 
-                self.precoFake = formatarNumero!
-                self.precoEscolhido.text = formatarNumero!
+                //COMECAR A VER DAQUI PARA TRATAR O OPTIONAL
+                let formatarNumero = (limiteTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
+                print(formatarNumero)
+                print(limiteTxtField.text)
                 
-                self.decrementar()
+                if limiteTxtField.text == "0" || limiteTxtField.text == "" {
+                    self.buttonFinalizarItem.enabled = false
+                    self.buttonAddItem.enabled = false
+                    
+                    self.precoEscolhido.text = "R$"
+                } else {
+                    self.buttonFinalizarItem.enabled = true
+                    self.buttonAddItem.enabled = true
+                    
+                    self.precoFake = formatarNumero!
+                    self.precoEscolhido.text = self.precoFake
+                    print(self.precoEscolhido.text)
+                    print(self.precoFake)
+                    
+                    self.decrementar()
+                }
+                
+                self.lista.limite = Double(self.precoFake)
+                
+                self.navigationController?.popToViewController(self, animated: true)
             }
-            
-            self.lista.limite = Double(self.precoFake)
-
-            self.navigationController?.popToViewController(self, animated: true)
         })
         
         alertaNovoLimite.addAction(cancelar)
@@ -193,17 +234,10 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         
         self.presentViewController(alertaNovoLimite, animated: true, completion: nil)
     }
-    
-    @IBAction func finalizar(sender: AnyObject) { mm.finalizarLista(navigationController!, view: self, arrayNomeLista: arrayNomeLista, lista: self.lista, tipo: "limitado") }
-    
-    func decrementar(){
-        
-        let valorInicial = Double(precoFake)
-        var valorInicialAlterado = valorInicial
-        for i in produtos{
-            valorInicialAlterado = valorInicialAlterado! - Double(i.valor!)
-        }
-        
-        precoEscolhido.text = "\(valorInicialAlterado)"
+
+    @IBAction func finalizar(sender: AnyObject) {
+        mm.finalizarLista(navigationController!, view: self, arrayNomeLista: arrayNomeLista, lista: self.lista, tipo: "limitado")
     }
+    
+    
 }
