@@ -423,6 +423,11 @@
 					37E08BDA1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = GAANZNADLG;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					37E08BEE1C63BBD500369E84 = {
 						CreatedOnToolsVersion = 7.2;

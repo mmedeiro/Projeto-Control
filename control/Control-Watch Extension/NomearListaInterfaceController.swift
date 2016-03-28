@@ -36,16 +36,7 @@ class NomearListaInterfaceController: WKInterfaceController, WCSessionDelegate {
 //            nomeDaClasse = "limitado"
         }
         
-        if WCSession.isSupported() {
-            WCSession.defaultSession().delegate = self
-            WCSession.defaultSession().activateSession()
-            print(#function,"SESSÃO ATIVADA")
-            
             addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(NomearListaInterfaceController.salvar))
-        } else {
-            print(#function, "WCsession não é suportado")
-            presentAlertControllerWithTitle("Erro", message: "Não foi possível ativar a sessão", preferredStyle: .Alert, actions: [])
-        }
     }
 
     override func willActivate() {
@@ -70,13 +61,14 @@ class NomearListaInterfaceController: WKInterfaceController, WCSessionDelegate {
         dict["total"] = totalLista
         
         print(dict)
-//        WCSession.defaultSession().sendMessage(dict, replyHandler: nil, errorHandler: nil)
-        WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
-            print(#function, "Mensagem enviada")
+        if WCSession.defaultSession().reachable == true {
+            
+            WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
+                print(#function, "Mensagem enviada")
             }) { (error) -> Void in
                 print(#function, "Erro ao enviar mensagem: \(error)")
+            }
         }
-        
         let ok = WKAlertAction(title: "ok", style: .Default) { () -> Void in
             WKInterfaceController.reloadRootControllersWithNames(["home"], contexts: nil)
         }

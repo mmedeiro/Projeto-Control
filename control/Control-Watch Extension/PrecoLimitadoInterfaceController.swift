@@ -8,13 +8,14 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class PrecoLimitadoInterfaceController: WKInterfaceController {
+class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate {
 
 //    let udValor = NSUserDefaults.standardUserDefaults()
     
     var valor: Double!
+    var valorAlterado: Double!
     var total = Double(0)
     var amount = Double(0)
     var msg = String()
@@ -25,12 +26,13 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-//        PrecoLimitadoInterfaceController.reloadRootControllersWithNames(["limitado"], contexts: nil)
 
         
         addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(PrecoLimitadoInterfaceController.salvar))
         addMenuItemWithItemIcon(.Resume, title: "Alterar Limite", action: #selector(PrecoLimitadoInterfaceController.alterarLimite))
-        valor = context as! Double
+        valor = context![0] as! Double
+        total = context![1] as! Double
+
         msg = ""
     }
 
@@ -40,7 +42,7 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
         //salvar
         if controler == true{
             total = amount + total
-            valor = valor - total
+            valorAlterado = valor - total
             controler = false
         }
         loadData()
@@ -58,8 +60,21 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
     }
 
     func loadData() {
-        limite.setText("Limite: \(valor)")
+        limite.setText("Limite: \(valorAlterado)")
         quantiaGasta.setText("\(getDisplayAmount(total))")
+        
+        var dict:[String:Double] = [String:Double]()
+        
+        dict["precoProduto"] = amount
+        dict["limite"] = valor
+        if WCSession.defaultSession().reachable == true {
+            
+            WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
+                print(#function, "Mensagem enviada")
+            }) { (error) -> Void in
+                print(#function, "Erro ao enviar mensagem: \(error)")
+            }
+        }
     }
     
 //    @IBAction func dictationAction() {
@@ -93,7 +108,7 @@ class PrecoLimitadoInterfaceController: WKInterfaceController {
     }
     
      func alterarLimite(){
-        self.presentControllerWithName("DefinirLimiteController", context: nil)
+        self.presentControllerWithName("limitado", context: total)
     }
     
 }

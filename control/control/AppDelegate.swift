@@ -8,15 +8,30 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        if WCSession.isSupported(){
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            if WCSession.defaultSession().paired != true {
+                print("Apple Watch is not paired")
+            }
+            
+            if WCSession.defaultSession().watchAppInstalled != true {
+                print("WatchKit app is not installed")
+            }
+        } else {
+            print("WatchConnectivity is not supported on this device")
+        }        
+    
         return true
     }
 
@@ -96,6 +111,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     // MARK: - Core Data Saving support
+//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//
+//        
+//    }
     
     func saveContext (){
         do {
@@ -105,6 +124,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             abort()
         }
     }
-
 }
 

@@ -13,13 +13,16 @@ import Foundation
 class DefinirLimiteController: WKInterfaceController {
     
     var amount = Double(0)
-
+    var valorGasto : Double!
     @IBOutlet var limiteDefinido: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-
+        if context != nil{
+            valorGasto = context as! Double
+        } else {
+            valorGasto = 0
+        }
     }
 
     override func willActivate() {
@@ -27,9 +30,12 @@ class DefinirLimiteController: WKInterfaceController {
         super.willActivate()
         if amount != 0{
             //rootview
-        DefinirLimiteController.reloadRootControllersWithNames(["idtxt"], contexts: [amount])
-//    self.pushControllerWithName("idtxt", context: amount)
+            
+            let array = [amount, valorGasto]
+        DefinirLimiteController.reloadRootControllersWithNames(["idtxt"], contexts: [array
+            ])
         }
+        
         loadData()
     }
 

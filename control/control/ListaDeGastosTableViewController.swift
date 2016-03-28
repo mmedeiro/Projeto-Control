@@ -23,11 +23,11 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
         super.viewDidLoad()
         navigationController?.navigationBarHidden = false
         
-        if WCSession.isSupported(){
-            WCSession.defaultSession().delegate = self
-            WCSession.defaultSession().activateSession()
-            print(#function, "Sessão iniciada")
-        }
+        //        if WCSession.isSupported(){
+        //            WCSession.defaultSession().delegate = self
+        //            WCSession.defaultSession().activateSession()
+        //            print(#function, "Sessão iniciada")
+        //        }
         
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
         myBackButton.addTarget(self, action: #selector(ListaDeGastosTableViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -102,12 +102,12 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
     
     
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -120,7 +120,7 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
             ListaManager.sharedInstance.save()
         }
         
-       listas = ListaManager.sharedInstance.buscarListas()
+        listas = ListaManager.sharedInstance.buscarListas()
         
         self.tableView.reloadData()
     }
@@ -128,31 +128,50 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
     func popToRoot(sender:UIBarButtonItem){
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
-
+    
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        guard let prod = message["precoProduto"],
+              let lim = message["limite"] else {
+                print(#function, "deu")
+                return
+        }
+        
         guard let nomeLista = message["nomeLista"],
-            let total = message["total"] else {
+              let total = message["total"] else {
                 print(#function, "foi")
                 return
         }
+        
+        print(prod, lim)
         print(nomeLista, total)
+        
         let data = NSDate()
+        var lista: Lista!
+        var produto: Produtos!
         
         lista = ListaManager.sharedInstance.novaLista()
-        lista.nome = nomeLista as? String
-        lista.produtos = total as? NSSet
-        lista.data = data
-        lista.limite = 0
-        ListaManager.sharedInstance.save()
-        listas = ListaManager.sharedInstance.buscarListas()
+        produto = ProdutoManager.sharedInstance.novoProduto()
         
-        arrayTotal.append("\(total)")
-        arrayLista.append(nomeLista as! String)
-        arrayData.append("\(data)")
+        produto.nome = ""
+        produto.valor = prod as? Double
+        produto.quantidade = 1
+        produto.lista = lista
+        
+        ProdutoManager.sharedInstance.save()
         
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            lista.nome = nomeLista as? String
+            lista.data = data
+            lista.limite = lim as? NSNumber
+            
+            ListaManager.sharedInstance.save()
+            
             self.tableView.reloadData()
         }
+        
+        arrayLista.append(nomeLista as! String)
+        arrayData.append("00/00/0000")
+        arrayTotal.append(total as! String)
         
     }
     
@@ -170,5 +189,5 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
             destino.indice = indexPath?.row
         }
     }
-
+    
 }
