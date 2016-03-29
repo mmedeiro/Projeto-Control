@@ -28,7 +28,7 @@ class ModeloMetodos: NSObject {
     }
     
     func finalizarLista(navigation: UINavigationController, view: UIViewController, arrayNomeLista: Array<String>, lista: Lista, tipo: String){
-        let alertaNovoLimite = UIAlertController(title: nil, message: "Digite um novo nome para sua comanda", preferredStyle: .Alert)
+        let alertaNovoLimite = UIAlertController(title: nil, message: "Digite um nome para sua comanda", preferredStyle: .Alert)
         var limiteTxtField = UITextField()
         
         alertaNovoLimite.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -43,6 +43,15 @@ class ModeloMetodos: NSObject {
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
+            
+            if limiteTxtField.text == "" {
+                
+                let alertaSemNome = UIAlertController(title: nil, message: "Defina um nome para a comanda", preferredStyle: .Alert)
+                alertaSemNome.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+
+                view.presentViewController(alertaSemNome, animated: true, completion: nil)
+            }
+            
             
             //salvar no coreData e redirecionar para a lista
             let date = NSDate()
@@ -61,7 +70,7 @@ class ModeloMetodos: NSObject {
             }
             
             ListaManager.sharedInstance.save()
-                        
+            
             navigation.popToViewController(view, animated: true)
             
             if limiteTxtField.text != "Nome da comanda"{
@@ -85,6 +94,6 @@ class ModeloMetodos: NSObject {
     func salvarDemaisItens(index: NSIndexPath, arrayNome: Array<String>, valor: Float, lista: Lista!){
         
         //lista -> arrayProd -> procurar o produto -> atualizar valor
-            
+        
     }
 }

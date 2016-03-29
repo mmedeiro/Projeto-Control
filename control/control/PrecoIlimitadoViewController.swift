@@ -115,6 +115,7 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
             descricaoTxtField = textField
             textField.placeholder = "Nome do item"
             textField.keyboardType = .Default
+            
         }
         
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -130,28 +131,45 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
             
-            let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
-            print(formatarNumero)
-            print(descricaoTxtField.text)
-            
-            
-            //salva apenas o primeiro produto
-            self.produto = ProdutoManager.sharedInstance.novoProduto()
-            
-            self.produto.nome = descricaoTxtField.text
-            if let numFormatado = formatarNumero{
-                self.produto.valor = Double(numFormatado)
+            if precoTxtField.text == "" {
+                
+                let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
+                alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertaCampoVazio, animated: true, completion: nil)
+                
+            } else {
+                
+                let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
+                
+                print(formatarNumero)
+                print(descricaoTxtField.text)
+                
+                
+                //salva apenas o primeiro produto
+                self.produto = ProdutoManager.sharedInstance.novoProduto()
+                
+                if descricaoTxtField.text != ""{
+                
+                    self.produto.nome = descricaoTxtField.text
+                } else {
+                    
+                    self.produto.nome = "Produto"
+                }
+                
+                if let numFormatado = formatarNumero{
+                    self.produto.valor = Double(numFormatado)
+                }
+                self.produto.quantidade = 1
+                self.produto.lista = self.lista
+                
+                ProdutoManager.sharedInstance.save()
+                
+                self.produtos.append(self.produto)
+                
+                self.navigationController?.popToViewController(self, animated: true)
+                
+                self.tableView.reloadData()
             }
-            self.produto.quantidade = 1
-            self.produto.lista = self.lista
-            
-            ProdutoManager.sharedInstance.save()
-            
-            self.produtos.append(self.produto)
-            
-            self.navigationController?.popToViewController(self, animated: true)
-            
-            self.tableView.reloadData()
         })
         
         alertaNovoItem.addAction(cancelar)
@@ -160,15 +178,17 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         self.presentViewController(alertaNovoItem, animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func finalizarComanda(sender: AnyObject){
         mm.finalizarLista(navigationController!, view: self, arrayNomeLista: arrayNomeLista, lista: self.lista, tipo: "ilimitado")
     }
     
     func incrementar(){
         var soma: Double = 0
-        for i in produtos{
-            soma = soma + Double(i.valor!)
-        }
+                for i in produtos{
+                    soma = soma + Double(i.valor!)
+                }
         totalDaComanda.text = "\(soma)"
     }
 }
