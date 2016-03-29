@@ -19,6 +19,7 @@ class ListaDeGastosTableViewController: UITableViewController {
     var count = 0
     var img = UIImage(named: "backButton") as UIImage?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBarHidden = false
@@ -93,13 +94,13 @@ class ListaDeGastosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! ListaDeGastosTableViewCell
         
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .LongStyle
-        print(dateFormatter.stringFromDate(NSDate()))
+//        var dateFormatter = NSDateFormatter()
+//        dateFormatter.dateStyle = .LongStyle
+//        print(dateFormatter.stringFromDate(NSDate()))
         
         cell.nomeDaLista.text = listas[indexPath.row].nome?.capitalizedString
         cell.totalDaLista.text = arrayTotal[indexPath.row]
-        cell.dataDaLista.text! = "\(listas[indexPath.row].data)"
+        cell.dataDaLista.text? = "\(listas[indexPath.row].data!)"
         print("\(listas[indexPath.row].data!)")
         
         return cell
