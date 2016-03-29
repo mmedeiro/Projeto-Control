@@ -29,11 +29,8 @@ class DefinirLimiteController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         if amount != 0{
-            //rootview
-            
-            let array = [amount, valorGasto]
-        DefinirLimiteController.reloadRootControllersWithNames(["idtxt"], contexts: [array
-            ])
+        let array = [amount, valorGasto]
+        DefinirLimiteController.reloadRootControllersWithNames(["idtxt"], contexts: [array])
         }
         
         loadData()
@@ -46,20 +43,12 @@ class DefinirLimiteController: WKInterfaceController {
     
     func loadData() {
        limiteDefinido.setText(getDisplayAmount(amount))
-//        self.pushControllerWithName("PrecoLimitadoInterfaceController", context: limiteDefinido)
     }
     
-//    @IBAction func dictationAction() {
-//        presentTextInputControllerWithSuggestions(["R$2,75","R$50,00", "R$100,00"], allowedInputMode: .Plain) { (results) -> Void in
-//            
-//            self.limiteDefinido.setText(results?.first as? String)
-//        }
-//    }
 
     @IBAction func textationAction() {
         let array = [self, "DefinirLimiteController"]
-        self.presentControllerWithName("numericKeyboard", context: array)
-        
+        self.presentControllerWithName("numericKeyboard", context: "inicio")
     }
     
     func getDisplayAmount(value: Double, round: Bool = true) -> String {

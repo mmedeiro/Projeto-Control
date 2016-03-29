@@ -8,11 +8,9 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-
-class PrecoIlimitadoController: WKInterfaceController {
-
-//    let udValor = NSUserDefaults.standardUserDefaults()
+class PrecoIlimitadoController: WKInterfaceController , WCSessionDelegate {
     
     var amount = Double(0)
     var total = Double(0)
@@ -23,7 +21,14 @@ class PrecoIlimitadoController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-//        PrecoIlimitadoController.reloadRootControllersWithNames(["ilimitado"], contexts: nil)
+        
+        if WCSession.isSupported(){
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            print(#function, "Ativado")
+        } else {
+            print(#function, "Desativado")
+        }
 
         addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(PrecoIlimitadoController.salvar))
         msg = ""
@@ -32,7 +37,7 @@ class PrecoIlimitadoController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        //salvar
+        
         if controler == true{
             total = amount + total
             controler = false
@@ -43,7 +48,7 @@ class PrecoIlimitadoController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        if msg == "calculadora" || msg == "voz"{
+        if msg == "calculadora" {
             controler = true
         } else {
             controler = false
@@ -55,21 +60,9 @@ class PrecoIlimitadoController: WKInterfaceController {
         limiteDefinido.setText(getDisplayAmount(total))
     }
     
-//    @IBAction func dictationAction() {
-//        presentTextInputControllerWithSuggestions(["R$2,75","R$50,00", "R$100,00"], allowedInputMode: .Plain) { (results) -> Void in
-//            self.msg = "voz"
-//            var preco = String()
-//            preco = (results?.first as? String)!
-//            preco.stringByReplacingOccurrencesOfString("R$", withString: "")
-//            print(preco)
-//            self.amount = Double(preco)!
-//        }
-//    }
-    
     @IBAction func textationAction() {
         msg = "calculadora"
         let array = [self, "PrecoIlimitadoController"]
-//        PrecoIlimitadoController.reloadRootControllersWithNames(["numericKeyboard"], contexts: [array])
         self.presentControllerWithName("numericKeyboard", context: array)
     }
     
@@ -81,9 +74,18 @@ class PrecoIlimitadoController: WKInterfaceController {
     }
     
     func salvar(){
-        //salvar nsuserdefault...
-//        udValor.setValue(total, forKeyPath: "totalLista")
-//        udValor.synchronize()
+        //envia msg para iPhone
+        var dict: [String:Double] = [String:Double]()
+        
+        dict["totalProdutos"] = total
+        dict["limiteLista"] = 0
+        
+        WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) in
+            print(#function, "Mensagem enviada")
+            }) { (error) in
+                print(#function, "Erro ao enviar mensagem: \(error)")
+        }
+        
         let array = [self,"PrecoIlimitadoController"]
         self.presentControllerWithName("nomearLista", context: array)
     }

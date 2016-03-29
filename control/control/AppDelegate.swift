@@ -17,24 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        if WCSession.isSupported(){
-            WCSession.defaultSession().delegate = self
-            WCSession.defaultSession().activateSession()
-            if WCSession.defaultSession().paired != true {
-                print("Apple Watch is not paired")
-            }
-            
-            if WCSession.defaultSession().watchAppInstalled != true {
-                print("WatchKit app is not installed")
-            }
-        } else {
-            print("WatchConnectivity is not supported on this device")
-        }        
-    
         return true
     }
 
+   
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -75,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
-        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+     var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("control.sqlite")
         print("Diretório: \(self.applicationDocumentsDirectory)")
         var error: NSError? = nil
@@ -99,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         return coordinator
     }()
     
-    lazy var managedObjectContext: NSManagedObjectContext? = {
+   lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
         if coordinator == nil {
@@ -111,11 +97,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     }()
     
     // MARK: - Core Data Saving support
-//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-//
-//        
-//    }
-    
     func saveContext (){
         do {
             try self.managedObjectContext!.save()
@@ -125,4 +106,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         }
     }
 }
-
