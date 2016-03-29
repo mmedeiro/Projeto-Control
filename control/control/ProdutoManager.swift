@@ -53,7 +53,7 @@ class ProdutoManager {
             print("Salvou Produto")
         }
         catch{
-            print("Deu ruim")
+            print("Não salvou produto")
         }
     }
 

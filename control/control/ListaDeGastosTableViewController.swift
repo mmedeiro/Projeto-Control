@@ -44,7 +44,6 @@ class ListaDeGastosTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         for listaIndex in ListaManager.sharedInstance.buscarListas(){
             soma = 0
-            print(listaIndex.nome)
             
             if  listaIndex.nome == nil {
                 listas.removeAtIndex(count)
@@ -52,13 +51,16 @@ class ListaDeGastosTableViewController: UITableViewController {
                 ListaManager.sharedInstance.save()
             } else {
                 
+                let dataEntrega = NSDateFormatter()
+                dataEntrega.dateFormat = "dd/MM/yyyy hh:mm"
+                let dataString = dataEntrega.stringFromDate(listaIndex.data!)
+                
                 arrayLista.append(listaIndex.nome!)
-                arrayData.append("\(listaIndex.data!)")
+                arrayData.append(dataString)
                 for produtoIndex in ProdutoManager.sharedInstance.buscarProdutos(){
                     if produtoIndex.lista!.objectID == listaIndex.objectID{
                         
                         soma = soma + Double(produtoIndex.valor!)
-                        print(soma)
                     }
                 }
                 arrayTotal.append("\(soma)")
@@ -94,14 +96,10 @@ class ListaDeGastosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! ListaDeGastosTableViewCell
         
-//        var dateFormatter = NSDateFormatter()
-//        dateFormatter.dateStyle = .LongStyle
-//        print(dateFormatter.stringFromDate(NSDate()))
         
         cell.nomeDaLista.text = listas[indexPath.row].nome?.capitalizedString
         cell.totalDaLista.text = arrayTotal[indexPath.row]
-        cell.dataDaLista.text? = "\(listas[indexPath.row].data!)"
-        print("\(listas[indexPath.row].data!)")
+        cell.dataDaLista.text? = arrayData[indexPath.row]
         
         return cell
     }

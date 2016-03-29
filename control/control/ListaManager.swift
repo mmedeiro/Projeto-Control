@@ -29,28 +29,6 @@ class ListaManager {
         return NSEntityDescription.insertNewObjectForEntityForName(ListaManager.entityName, inManagedObjectContext: manegedContext) as! Lista
     }
     
-//    func buscarLista(lista: Array<Lista>) -> Lista{
-//        let fetchRequest = NSFetchRequest(entityName: ListaManager.entityName)
-//        
-//        do{
-//            let fetchedResults = try manegedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-//            
-//            for result in (fetchRequest as? [Lista])!{
-//                return result
-//            }
-//            if let results = fetchedResults as? [Lista] {
-//                return results
-//            } else {
-//                print("Could not fetch")
-//            }
-//            
-//        } catch {
-//            print("Error")
-//        }
-//        
-//        return Array<Lista>()
-//    }
-    
     func buscarListas()->Array<Lista>{
         let fetchRequest = NSFetchRequest(entityName: ListaManager.entityName)
         
@@ -76,7 +54,7 @@ class ListaManager {
             print("Salvou Lista")
         }
         catch{
-            print("Deu ruim")
+            print("Não Salvou a lista")
         }
     }
     

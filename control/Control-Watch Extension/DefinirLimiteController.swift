@@ -48,7 +48,7 @@ class DefinirLimiteController: WKInterfaceController {
 
     @IBAction func textationAction() {
         let array = [self, "DefinirLimiteController"]
-        self.presentControllerWithName("numericKeyboard", context: "inicio")
+        self.presentControllerWithName("numericKeyboard", context: array)
     }
     
     func getDisplayAmount(value: Double, round: Bool = true) -> String {

@@ -55,12 +55,7 @@ class ModeloMetodos: NSObject {
             
             //salvar no coreData e redirecionar para a lista
             let date = NSDate()
-            
-            //            let dataEntrega = NSDateFormatter()
-            //            dataEntrega.dateFormat = "dd/MM/yyyy"
-            //            let dataString = dataEntrega.stringFromDate(date)
-            //            let dd = dataEntrega.dateFromString(dataString)
-            
+                        
             //salva lista
             lista.nome = limiteTxtField.text
             lista.data = date

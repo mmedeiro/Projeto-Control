@@ -37,7 +37,6 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         self.lista.nome = nil
         
         mm.designBotao(precoEscolhido)
-        print(valorDoLimite())
     }
     
     //conf. tabBar
@@ -69,7 +68,6 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         cell.descricaoLabel.text = produtos[indexPath.row].nome!.capitalizedString
         if let numFormatado = produtos[indexPath.row].valor{
             cell.precoLabel.text = "\(numFormatado)"
-            print(numFormatado)
         }
         
         decrementar()
@@ -208,25 +206,17 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
             } else {
                 
                 let formatarNumero = (limiteTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
-                print(formatarNumero)
-                print(limiteTxtField.text)
                 
                 if limiteTxtField.text == "0" || limiteTxtField.text == "" {
                     self.buttonFinalizarItem.enabled = false
                     self.buttonAddItem.enabled = false
-                    
                     self.precoEscolhido.text = "R$"
+                    
                 } else {
                     self.buttonFinalizarItem.enabled = true
                     self.buttonAddItem.enabled = true
-                    
                     self.precoFake = formatarNumero!
-                    
                     self.precoEscolhido.text? = "R$ \(self.precoFake)"
-                    print("R$ \(formatarNumero!)")
-                    print(self.precoEscolhido.text)
-                    print(self.precoFake)
-                    
                     self.decrementar()
                 }
                 

@@ -25,13 +25,17 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         soma = 0
         nomeLista.text = lista.nome?.capitalizedString
-        dataLista.text = "\(lista.data)"
+        
+        let dataEntrega = NSDateFormatter()
+        dataEntrega.dateFormat = "dd/MM/yyyy hh:mm"
+        let dataString = dataEntrega.stringFromDate(lista.data!)
+
+        dataLista.text = dataString
         
         produtos = lista.produtos?.allObjects as! [Produtos]
         
         for i in produtos{
             soma = soma + Double(i.valor!)
-            print("nova soma: ", soma)
         }
         
         if lista.limite == 0 {

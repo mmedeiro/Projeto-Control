@@ -141,10 +141,6 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
                 
                 let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
                 
-                print(formatarNumero)
-                print(descricaoTxtField.text)
-                
-                
                 //salva apenas o primeiro produto
                 self.produto = ProdutoManager.sharedInstance.novoProduto()
                 
