@@ -138,7 +138,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
         let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
             
-            if precoTxtField.text == "" {
+            if precoTxtField.text == "" || precoTxtField == " "{
                 
                 let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
                 alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
@@ -146,14 +146,20 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                 
             } else {
                 
+                
                 let formatarNumero = (precoTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
                 
                 
                 self.produto = ProdutoManager.sharedInstance.novoProduto()
-                if let numFormatado = formatarNumero{
+                
+                if descricaoTxtField.text != "" {
+                    self.produto.nome = descricaoTxtField.text
+                } else  {
+                    self.produto.nome = "-Sem Descrição de gasto-"
+                }
+                 if let numFormatado = formatarNumero{
                     self.produto.valor = Double(numFormatado)
                 }
-                self.produto.nome = descricaoTxtField.text
                 self.produto.quantidade = 1
                 self.produto.lista = self.lista
                 
@@ -201,7 +207,6 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                 
             } else {
                 
-                //COMECAR A VER DAQUI PARA TRATAR O OPTIONAL
                 let formatarNumero = (limiteTxtField.text)?.stringByReplacingOccurrencesOfString(",", withString: ".")
                 print(formatarNumero)
                 print(limiteTxtField.text)
@@ -216,8 +221,9 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                     self.buttonAddItem.enabled = true
                     
                     self.precoFake = formatarNumero!
-
-                    self.precoEscolhido.text? = self.precoFake
+                    
+                    self.precoEscolhido.text? = "R$ \(self.precoFake)"
+                    print("R$ \(formatarNumero!)")
                     print(self.precoEscolhido.text)
                     print(self.precoFake)
                     
@@ -235,7 +241,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         
         self.presentViewController(alertaNovoLimite, animated: true, completion: nil)
     }
-
+    
     @IBAction func finalizar(sender: AnyObject) {
         mm.finalizarLista(navigationController!, view: self, arrayNomeLista: arrayNomeLista, lista: self.lista, tipo: "limitado")
     }

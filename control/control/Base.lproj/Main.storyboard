@@ -184,10 +184,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd/mm/aaaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywy-CI-N9w">
-                                            <rect key="frame" x="8" y="40" width="111" height="21"/>
+                                            <rect key="frame" x="8" y="40" width="200" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="KNy-Uv-jti"/>
-                                                <constraint firstAttribute="width" constant="111" id="LOB-Z1-8oA"/>
+                                                <constraint firstAttribute="width" constant="200" id="LOB-Z1-8oA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

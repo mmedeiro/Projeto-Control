@@ -73,6 +73,12 @@ class ListaDeGastosTableViewController: UITableViewController {
         
     }
     
+    private func FormatDate(date:NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        return dateFormatter.stringFromDate(date)
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -87,9 +93,14 @@ class ListaDeGastosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! ListaDeGastosTableViewCell
         
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        print(dateFormatter.stringFromDate(NSDate()))
+        
         cell.nomeDaLista.text = listas[indexPath.row].nome?.capitalizedString
         cell.totalDaLista.text = arrayTotal[indexPath.row]
-        cell.dataDaLista.text = "\(listas[indexPath.row].data)"
+        cell.dataDaLista.text! = "\(listas[indexPath.row].data)"
+        print("\(listas[indexPath.row].data!)")
         
         return cell
     }
