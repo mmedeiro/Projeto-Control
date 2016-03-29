@@ -109,7 +109,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
             valorInicialAlterado = valorInicialAlterado - Double(i.valor!)
         }
         
-        precoEscolhido.text = "\(valorInicialAlterado)"
+        precoEscolhido.text? = "\(valorInicialAlterado)"
     }
     
     
@@ -216,7 +216,8 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                     self.buttonAddItem.enabled = true
                     
                     self.precoFake = formatarNumero!
-                    self.precoEscolhido.text = self.precoFake
+
+                    self.precoEscolhido.text? = self.precoFake
                     print(self.precoEscolhido.text)
                     print(self.precoFake)
                     
