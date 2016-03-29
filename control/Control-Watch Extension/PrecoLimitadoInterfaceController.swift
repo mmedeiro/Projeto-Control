@@ -11,8 +11,6 @@ import Foundation
 import WatchConnectivity
 
 class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate {
-
-//    let udValor = NSUserDefaults.standardUserDefaults()
     
     var valor: Double!
     var valorAlterado: Double!
@@ -27,6 +25,13 @@ class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
+        if WCSession.isSupported(){
+            WCSession.defaultSession().delegate = self
+            WCSession.defaultSession().activateSession()
+            print(#function, "Ativado")
+        } else {
+            print(#function, "Desativado")
+        }
         
         addMenuItemWithItemIcon(.Accept, title: "Salvar", action: #selector(PrecoLimitadoInterfaceController.salvar))
         addMenuItemWithItemIcon(.Resume, title: "Alterar Limite", action: #selector(PrecoLimitadoInterfaceController.alterarLimite))
@@ -39,7 +44,7 @@ class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        //salvar
+
         if controler == true{
             total = amount + total
             valorAlterado = valor - total
@@ -62,27 +67,7 @@ class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate
     func loadData() {
         limite.setText("Limite: \(valorAlterado)")
         quantiaGasta.setText("\(getDisplayAmount(total))")
-        
-        var dict:[String:Double] = [String:Double]()
-        
-        dict["precoProduto"] = amount
-        dict["limite"] = valor
-        if WCSession.defaultSession().reachable == true {
-            
-            WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
-                print(#function, "Mensagem enviada")
-            }) { (error) -> Void in
-                print(#function, "Erro ao enviar mensagem: \(error)")
-            }
-        }
     }
-    
-//    @IBAction func dictationAction() {
-//        presentTextInputControllerWithSuggestions(["R$2,75","R$50,00", "R$100,00"], allowedInputMode: .Plain) { (results) -> Void in
-//            self.msg = "voz"
-//            self.quantiaGasta.setText(results?.first as? String)
-//        }
-//    }
     
     @IBAction func textationAction() {
         msg = "calculadora"
@@ -99,9 +84,17 @@ class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate
     }
     
      func salvar(){
-        //salvar...
-//        udValor.setValue(total, forKeyPath: "totalLista")
-//        udValor.synchronize()
+        //envia msg para iPhone
+        var dict:[String:Double] = [String:Double]()
+        
+        dict["totalProdutos"] = total
+        dict["limiteLista"] = valor
+        
+        WCSession.defaultSession().sendMessage(dict, replyHandler: { (message) -> Void in
+            print(#function, "Mensagem enviada")
+        }) { (error) -> Void in
+            print(#function, "Erro ao enviar mensagem: \(error)")
+        }
         
         let array = [self,"PrecoLimitadoController"]
         self.presentControllerWithName("nomearLista", context: array)
@@ -110,5 +103,4 @@ class PrecoLimitadoInterfaceController: WKInterfaceController, WCSessionDelegate
      func alterarLimite(){
         self.presentControllerWithName("limitado", context: total)
     }
-    
 }

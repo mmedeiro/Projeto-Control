@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import WatchConnectivity
 
-class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate {
+class ListaDeGastosTableViewController: UITableViewController {
     
     var arrayLista: Array<String> = []
     var arrayData: Array<String> = []
@@ -18,20 +17,16 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
     var lista: Lista!
     var soma: Double!
     var count = 0
+    var img = UIImage(named: "backButton") as UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBarHidden = false
         
-        //        if WCSession.isSupported(){
-        //            WCSession.defaultSession().delegate = self
-        //            WCSession.defaultSession().activateSession()
-        //            print(#function, "Sessão iniciada")
-        //        }
-        
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
         myBackButton.addTarget(self, action: #selector(ListaDeGastosTableViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        myBackButton.setTitle("< Home", forState: UIControlState.Normal)
+        myBackButton.setImage(img, forState: UIControlState.Normal)
+        myBackButton.setTitle("Home", forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
@@ -43,7 +38,6 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,7 +54,7 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
                 arrayLista.append(listaIndex.nome!)
                 arrayData.append("\(listaIndex.data!)")
                 for produtoIndex in ProdutoManager.sharedInstance.buscarProdutos(){
-                    if produtoIndex.lista!.nome == listaIndex.nome{
+                    if produtoIndex.lista!.objectID == listaIndex.objectID{
                         
                         soma = soma + Double(produtoIndex.valor!)
                         print(soma)
@@ -100,15 +94,7 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
         return cell
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
+
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -128,56 +114,8 @@ class ListaDeGastosTableViewController: UITableViewController, WCSessionDelegate
     func popToRoot(sender:UIBarButtonItem){
         self.navigationController!.popToRootViewControllerAnimated(true)
     }
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        guard let prod = message["precoProduto"],
-              let lim = message["limite"] else {
-                print(#function, "deu")
-                return
-        }
-        
-        guard let nomeLista = message["nomeLista"],
-              let total = message["total"] else {
-                print(#function, "foi")
-                return
-        }
-        
-        print(prod, lim)
-        print(nomeLista, total)
-        
-        let data = NSDate()
-        var lista: Lista!
-        var produto: Produtos!
-        
-        lista = ListaManager.sharedInstance.novaLista()
-        produto = ProdutoManager.sharedInstance.novoProduto()
-        
-        produto.nome = ""
-        produto.valor = prod as? Double
-        produto.quantidade = 1
-        produto.lista = lista
-        
-        ProdutoManager.sharedInstance.save()
-        
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            lista.nome = nomeLista as? String
-            lista.data = data
-            lista.limite = lim as? NSNumber
-            
-            ListaManager.sharedInstance.save()
-            
-            self.tableView.reloadData()
-        }
-        
-        arrayLista.append(nomeLista as! String)
-        arrayData.append("00/00/0000")
-        arrayTotal.append(total as! String)
-        
-    }
-    
+
     // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "dadosLista" {

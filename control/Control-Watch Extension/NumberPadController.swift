@@ -174,9 +174,9 @@ class NumberPadController: WKInterfaceController {
         }
     }
     
-    @IBAction func doneTapped() {
-        if nomeDaClasse == "limite"{
-            self.presentControllerWithName("idtxt", context: limiteSC.getDisplayAmount(limiteSC.amount))
-        }
-    }
+//    @IBAction func doneTapped() {
+//        if nomeDaClasse == "limite"{
+//            self.presentControllerWithName("idtxt", context: limiteSC.getDisplayAmount(limiteSC.amount))
+//        }
+//    }
 }
