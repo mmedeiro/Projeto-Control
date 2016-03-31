@@ -43,10 +43,10 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
             valorGasto.text = "Total: \(soma)"
         } else {
             if soma > Double(lista.limite!){
-                valorLimite.text = "Você ultrapassou seu" + " limite inicial de R$ \(lista.limite)"
+                valorLimite.text? = "Você ultrapassou seu" + " limite inicial de R$ \(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             } else {
-                valorLimite.text = "Parabéns, você não ultrapassou"+" seu limite de R$ \(lista.limite)"
+                valorLimite.text? = "Parabéns, você não ultrapassou"+" seu limite de R$ \(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             }
         }

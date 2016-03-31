@@ -67,7 +67,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orçamento Limitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYD-Me-nJ3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gasto limitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYD-Me-nJ3">
                                                     <rect key="frame" x="8" y="29" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,7 +95,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orçamento Ilimitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-Me-Ul0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gasto ilimitado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-Me-Ul0">
                                                     <rect key="frame" x="8" y="29" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,6 +201,8 @@
                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                             <color key="textColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -426,31 +428,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da lista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhJ-UF-VUg">
-                                <rect key="frame" x="20" y="30" width="565" height="20"/>
+                                <rect key="frame" x="20" y="30" width="565" height="21"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW8-7n-lIH">
-                                <rect key="frame" x="20" y="60" width="560" height="20"/>
+                                <rect key="frame" x="20" y="61" width="560" height="21"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor gasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNv-IJ-Z0u">
-                                <rect key="frame" x="20" y="109" width="560" height="20"/>
+                                <rect key="frame" x="20" y="111" width="560" height="20"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor limite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-p9-tAP">
-                                <rect key="frame" x="20" y="139" width="560" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor limite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VJ-p9-tAP">
+                                <rect key="frame" x="20" y="141" width="560" height="20"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comanda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-iW-s0U">
-                                <rect key="frame" x="20" y="178" width="560" height="21"/>
+                                <rect key="frame" x="20" y="180" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NrT-Oa-3Bi"/>
                                 </constraints>
@@ -459,14 +465,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linha" translatesAutoresizingMaskIntoConstraints="NO" id="NTB-Rw-ekj">
-                                <rect key="frame" x="0.0" y="207" width="600" height="9"/>
+                                <rect key="frame" x="0.0" y="209" width="600" height="9"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="QyZ-VO-mnC"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FXa-5S-zE0">
-                                <rect key="frame" x="0.0" y="224" width="600" height="272"/>
-                                <color key="backgroundColor" red="0.1450980392" green="0.18823529410000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="226" width="600" height="270"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" rowHeight="44" id="ykh-ai-8HX" customClass="DetalheListaTableViewCell" customModule="control" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -510,7 +516,7 @@
                                                 <constraint firstItem="yoh-iS-ebO" firstAttribute="baseline" secondItem="nsx-aa-BQX" secondAttribute="baseline" id="ndh-1Z-ERP"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.1450980392" green="0.18823529410000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nomeProduto" destination="nsx-aa-BQX" id="Uao-5Y-Igh"/>
                                             <outlet property="qtdProduto" destination="zNT-OK-Bxg" id="rX5-pV-pgv"/>
@@ -524,7 +530,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1450980392" green="0.18823529410000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="FXa-5S-zE0" secondAttribute="bottom" constant="40" id="0CV-X8-S0p"/>
                             <constraint firstItem="vW8-7n-lIH" firstAttribute="top" secondItem="AhJ-UF-VUg" secondAttribute="bottom" constant="10" id="0iG-1P-AdZ"/>

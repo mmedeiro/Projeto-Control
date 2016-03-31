@@ -31,9 +31,6 @@
 		4B004C311C9C4B4C002610C5 /* Control-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B004C301C9C4B4C002610C5 /* Control-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4B004C381C9C4B4C002610C5 /* InicialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C371C9C4B4C002610C5 /* InicialController.swift */; };
 		4B004C3A1C9C4B4C002610C5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C391C9C4B4C002610C5 /* ExtensionDelegate.swift */; };
-		4B004C3C1C9C4B4C002610C5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C3B1C9C4B4C002610C5 /* NotificationController.swift */; };
-		4B004C3E1C9C4B4C002610C5 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C3D1C9C4B4C002610C5 /* GlanceController.swift */; };
-		4B004C401C9C4B4C002610C5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C3F1C9C4B4C002610C5 /* ComplicationController.swift */; };
 		4B004C421C9C4B4C002610C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B004C411C9C4B4C002610C5 /* Assets.xcassets */; };
 		4B004C461C9C4B4C002610C5 /* Control-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4B004C241C9C4B4C002610C5 /* Control-Watch.app */; };
 		4B004C501C9C7911002610C5 /* DefinirLimiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */; };
@@ -138,9 +135,6 @@
 		4B004C361C9C4B4C002610C5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4B004C371C9C4B4C002610C5 /* InicialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicialController.swift; sourceTree = "<group>"; };
 		4B004C391C9C4B4C002610C5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		4B004C3B1C9C4B4C002610C5 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		4B004C3D1C9C4B4C002610C5 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		4B004C3F1C9C4B4C002610C5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		4B004C411C9C4B4C002610C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B004C431C9C4B4C002610C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinirLimiteController.swift; sourceTree = "<group>"; };
@@ -287,9 +281,6 @@
 				4B004C371C9C4B4C002610C5 /* InicialController.swift */,
 				4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */,
 				4B004C391C9C4B4C002610C5 /* ExtensionDelegate.swift */,
-				4B004C3B1C9C4B4C002610C5 /* NotificationController.swift */,
-				4B004C3D1C9C4B4C002610C5 /* GlanceController.swift */,
-				4B004C3F1C9C4B4C002610C5 /* ComplicationController.swift */,
 				4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */,
 				37B288411CA1D86000832002 /* PrecoLimitadoInterfaceController.swift */,
 				4B004C411C9C4B4C002610C5 /* Assets.xcassets */,
@@ -563,12 +554,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B004C3C1C9C4B4C002610C5 /* NotificationController.swift in Sources */,
 				4B004C501C9C7911002610C5 /* DefinirLimiteController.swift in Sources */,
 				4B004C3A1C9C4B4C002610C5 /* ExtensionDelegate.swift in Sources */,
-				4B004C401C9C4B4C002610C5 /* ComplicationController.swift in Sources */,
 				4B004C381C9C4B4C002610C5 /* InicialController.swift in Sources */,
-				4B004C3E1C9C4B4C002610C5 /* GlanceController.swift in Sources */,
 				37B288421CA1D86000832002 /* PrecoLimitadoInterfaceController.swift in Sources */,
 				37C369AC1CA322270056B41B /* NomearListaInterfaceController.swift in Sources */,
 				4B004C521C9C91EB002610C5 /* NumberPadController.swift in Sources */,

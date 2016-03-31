@@ -10,13 +10,13 @@
             <objects>
                 <controller identifier="home" id="AgC-eL-Hgc" customClass="InicialController" customModule="Control_Watch_Extension">
                     <items>
-                        <label width="136" height="42.5" alignment="left" text="Bem - vindo ao control" textAlignment="center" numberOfLines="2" id="hfj-TJ-Dz3"/>
-                        <button width="1" alignment="left" title="Fixo" id="8bI-qS-YXv">
+                        <label width="136" height="42.5" alignment="left" text="Bem - vindo" textAlignment="center" numberOfLines="2" id="hfj-TJ-Dz3"/>
+                        <button width="1" alignment="left" title="Gasto limitado" id="8bI-qS-YXv">
                             <connections>
                                 <segue destination="xdg-Vd-l7w" kind="push" id="v0n-TR-L0s"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Ilimitado" id="Qih-xI-CKf">
+                        <button width="1" alignment="left" title="Gasto ilimitado" id="Qih-xI-CKf">
                             <connections>
                                 <segue destination="pCi-Vr-9NO" kind="push" id="89y-Ty-qv3"/>
                             </connections>
@@ -134,21 +134,21 @@
             <objects>
                 <controller identifier="ilimitado" id="pCi-Vr-9NO" customClass="PrecoIlimitadoController" customModule="Control_Watch_Extension">
                     <items>
+                        <label width="1" height="30" alignment="center" text="Total" textAlignment="center" id="Xnj-as-Zoe"/>
+                        <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="THw-km-kQh">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Valor" id="hxQ-Bz-ju2"/>
+                            </items>
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="pIj-jM-92M">
                             <items>
-                                <button width="1" alignment="center" verticalAlignment="center" title="Texto" id="bwM-iV-4dm">
+                                <button width="1" alignment="center" verticalAlignment="center" title="Inserir valor" id="bwM-iV-4dm">
                                     <connections>
                                         <action selector="textationAction" destination="pCi-Vr-9NO" id="ICR-kc-0Jf"/>
                                     </connections>
                                 </button>
                             </items>
-                        </group>
-                        <label alignment="center" text="Total" textAlignment="center" id="Xnj-as-Zoe"/>
-                        <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="THw-km-kQh">
-                            <items>
-                                <label alignment="center" verticalAlignment="center" text="valor" id="hxQ-Bz-ju2"/>
-                            </items>
-                            <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </group>
                     </items>
                     <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,14 +166,14 @@
                     <items>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="uOO-T5-Mop">
                             <items>
-                                <button width="1" alignment="left" verticalAlignment="center" title="Texto" id="dZi-97-MhJ">
+                                <button width="1" alignment="left" verticalAlignment="center" title="Inserir valor" id="dZi-97-MhJ">
                                     <connections>
                                         <action selector="textationAction" destination="hBc-Yb-6c8" id="cLx-t2-E2D"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
-                        <label alignment="left" text="Total do limite:" textAlignment="left" id="321-aT-XXL"/>
+                        <label alignment="left" text="Limite:" textAlignment="left" id="321-aT-XXL"/>
                         <label alignment="center" text="Gasto Total" id="p3s-hj-uQp"/>
                         <group width="70" height="70" alignment="center" radius="35" id="oT3-h8-mOc">
                             <items>
@@ -196,12 +196,15 @@
             <objects>
                 <controller identifier="nomearLista" id="4l2-xf-tk2" customClass="NomearListaInterfaceController" customModule="Control_Watch_Extension">
                     <items>
-                        <label alignment="center" text="Nome da lista:" textAlignment="center" id="K2d-lF-0wb"/>
-                        <label alignment="center" text="------------------" textAlignment="center" id="SXk-KR-43D"/>
+                        <label width="1" height="50" alignment="center" text="Nome da lista:" textAlignment="center" id="K2d-lF-0wb"/>
+                        <label width="1" alignment="center" text="Ex: Restaurante" textAlignment="center" id="SXk-KR-43D">
+                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <fontDescription key="font" type="italicSystem" pointSize="16"/>
+                        </label>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="X8E-Ni-4e9">
                             <items>
                                 <button width="1" alignment="center" verticalAlignment="center" title="Button" id="4MJ-f3-WRB"/>
-                                <button width="1" alignment="left" verticalAlignment="center" title="Voz" id="Mt3-cc-CMk">
+                                <button width="1" alignment="left" verticalAlignment="center" title="Definir nome" id="Mt3-cc-CMk">
                                     <connections>
                                         <action selector="reconhecimentoDeVoz" destination="4l2-xf-tk2" id="u2Q-mf-qVz"/>
                                     </connections>
@@ -222,22 +225,21 @@
             <objects>
                 <controller identifier="limitado" id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Control_Watch_Extension">
                     <items>
-                        <label alignment="center" text="Limite" textAlignment="center" id="07T-ox-8oN"/>
+                        <label width="1" height="30" alignment="center" text="Limite" textAlignment="center" id="07T-ox-8oN"/>
                         <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="eIc-7t-kJP">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="valor" textAlignment="center" id="LBD-qA-W1q"/>
+                                <label alignment="center" verticalAlignment="center" text="Valor" textAlignment="center" id="LBD-qA-W1q"/>
                             </items>
                             <color key="backgroundColor" red="0.23137254900000001" green="0.49803921569999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </group>
-                        <group width="1" height="30" alignment="center" verticalAlignment="bottom" id="W4P-9A-ZHT">
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="W4P-9A-ZHT">
                             <items>
-                                <button width="1" alignment="left" verticalAlignment="center" title="Texto" id="ffr-Wi-zRy">
+                                <button width="1" alignment="center" verticalAlignment="center" title="Inserir limite" id="ffr-Wi-zRy">
                                     <connections>
                                         <action selector="textationAction" destination="xdg-Vd-l7w" id="Eq0-Eo-2qh"/>
                                     </connections>
                                 </button>
                             </items>
-                            <variation key="device=watch38mm" height="22"/>
                         </group>
                     </items>
                     <color key="backgroundColor" red="0.1333333333" green="0.19215686269999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -247,42 +249,6 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="490" y="166"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Control_Watch" customModuleProvider="target">
-                    <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="245" y="942"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="245" y="1271"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
-            <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Control_Watch" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="563" y="1271"/>
         </scene>
     </scenes>
 </document>
