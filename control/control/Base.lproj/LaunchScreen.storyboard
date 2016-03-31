@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OIIIIII" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lk-1Z-Ueb">
-                                <rect key="frame" x="283" y="289" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96078431369999995" green="0.2666666667" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo" translatesAutoresizingMaskIntoConstraints="NO" id="qQa-vW-9ca">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-Ps-7HC">
+                                <rect key="frame" x="40" y="40" width="520" height="520"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cbf-Ps-7HC" secondAttribute="height" multiplier="1:1" id="60H-rG-4pJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3lk-1Z-Ueb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8Er-T4-h7U"/>
-                            <constraint firstItem="3lk-1Z-Ueb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="283" id="qfG-9f-0MY"/>
+                            <constraint firstItem="qQa-vW-9ca" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="OU0-Oq-MjQ"/>
+                            <constraint firstItem="cbf-Ps-7HC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g1W-pS-NaH"/>
+                            <constraint firstItem="qQa-vW-9ca" firstAttribute="centerX" secondItem="cbf-Ps-7HC" secondAttribute="centerX" id="hN3-GC-LUp"/>
+                            <constraint firstItem="cbf-Ps-7HC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lb2-xB-Cng"/>
+                            <constraint firstItem="cbf-Ps-7HC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="pKc-05-nF8"/>
+                            <constraint firstItem="qQa-vW-9ca" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rqw-0b-orE"/>
+                            <constraint firstItem="qQa-vW-9ca" firstAttribute="centerY" secondItem="cbf-Ps-7HC" secondAttribute="centerY" id="v5q-39-Oha"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +46,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fundo" width="343" height="343"/>
+        <image name="icone" width="343" height="343"/>
+    </resources>
 </document>
