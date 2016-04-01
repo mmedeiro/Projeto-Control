@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37E08BDA1C63BBD500369E84"
-               BuildableName = "control.app"
-               BlueprintName = "control"
+               BuildableName = "Comanda.app"
+               BlueprintName = "Comanda"
                ReferencedContainer = "container:control.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37E08BDA1C63BBD500369E84"
-            BuildableName = "control.app"
-            BlueprintName = "control"
+            BuildableName = "Comanda.app"
+            BlueprintName = "Comanda"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37E08BDA1C63BBD500369E84"
-            BuildableName = "control.app"
-            BlueprintName = "control"
+            BuildableName = "Comanda.app"
+            BlueprintName = "Comanda"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37E08BDA1C63BBD500369E84"
-            BuildableName = "control.app"
-            BlueprintName = "control"
+            BuildableName = "Comanda.app"
+            BlueprintName = "Comanda"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

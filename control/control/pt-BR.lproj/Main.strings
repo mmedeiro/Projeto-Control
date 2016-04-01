@@ -1,0 +1,102 @@
+
+/* Class = "UILabel"; text = "Limite"; ObjectID = "5Bo-Aa-95z"; */
+"5Bo-Aa-95z.text" = "Limite";
+
+/* Class = "UILabel"; text = "Valor limite"; ObjectID = "6VJ-p9-tAP"; */
+"6VJ-p9-tAP.text" = "Valor limite";
+
+/* Class = "UILabel"; text = "R$"; ObjectID = "6hm-vE-sDx"; */
+"6hm-vE-sDx.text" = "R$";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "97r-4c-kba"; */
+"97r-4c-kba.text" = "Label";
+
+/* Class = "UILabel"; text = "Nome da lista"; ObjectID = "AhJ-UF-VUg"; */
+"AhJ-UF-VUg.text" = "Nome da lista";
+
+/* Class = "UILabel"; text = "Lista de gastos"; ObjectID = "CZ6-jb-TEm"; */
+"CZ6-jb-TEm.text" = "Lista de gastos";
+
+/* Class = "UINavigationItem"; title = "Lista de Gastos"; ObjectID = "DFo-sg-RCb"; */
+"DFo-sg-RCb.title" = "Lista de Gastos";
+
+/* Class = "UIBarButtonItem"; title = "Adicionar Item"; ObjectID = "DIu-wp-cjT"; */
+"DIu-wp-cjT.title" = "Adicionar Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IDZ-y4-1wM"; */
+"IDZ-y4-1wM.text" = "Label";
+
+/* Class = "UILabel"; text = "Gasto limitado"; ObjectID = "IYD-Me-nJ3"; */
+"IYD-Me-nJ3.text" = "Gasto limitado";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "JsS-bv-csZ"; */
+"JsS-bv-csZ.text" = "Total";
+
+/* Class = "UIBarButtonItem"; title = "Finalizar Lista"; ObjectID = "Lpx-I4-eAO"; */
+"Lpx-I4-eAO.title" = "Finalizar Lista";
+
+/* Class = "UINavigationItem"; title = "Orçamento Limitado"; ObjectID = "M0V-si-TYd"; */
+"M0V-si-TYd.title" = "Orçamento Limitado";
+
+/* Class = "UIBarButtonItem"; title = "Alterar Limite"; ObjectID = "NTg-pE-2Zm"; */
+"NTg-pE-2Zm.title" = "Alterar Limite";
+
+/* Class = "UILabel"; text = "Valor gasto"; ObjectID = "PNv-IJ-Z0u"; */
+"PNv-IJ-Z0u.text" = "Valor gasto";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Rqe-4i-fuU"; */
+"Rqe-4i-fuU.text" = "Label";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "Vo6-hN-Wga"; */
+"Vo6-hN-Wga.text" = "Comanda";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "YTO-wH-zuP"; */
+"YTO-wH-zuP.text" = "Comanda";
+
+/* Class = "UITabBarItem"; title = "Limitar gastos"; ObjectID = "ZaV-g7-fyr"; */
+"ZaV-g7-fyr.title" = "Limitar gastos";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "a3a-iW-s0U"; */
+"a3a-iW-s0U.text" = "Comanda";
+
+/* Class = "UILabel"; text = "Nome da lista"; ObjectID = "cjE-Uw-2b0"; */
+"cjE-Uw-2b0.text" = "Nome da lista";
+
+/* Class = "UILabel"; text = "R$"; ObjectID = "eud-OF-KhX"; */
+"eud-OF-KhX.text" = "R$";
+
+/* Class = "UIBarButtonItem"; title = "Finalizar Lista"; ObjectID = "iVQ-cI-4gF"; */
+"iVQ-cI-4gF.title" = "Finalizar Lista";
+
+/* Class = "UILabel"; text = "Total gasto"; ObjectID = "iYY-T9-te6"; */
+"iYY-T9-te6.text" = "Total gasto";
+
+/* Class = "UILabel"; text = "Gasto ilimitado"; ObjectID = "jJc-Me-Ul0"; */
+"jJc-Me-Ul0.text" = "Gasto ilimitado";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kfO-dK-Q4E"; */
+"kfO-dK-Q4E.text" = "Label";
+
+/* Class = "UILabel"; text = "Nome do produto"; ObjectID = "nsx-aa-BQX"; */
+"nsx-aa-BQX.text" = "Nome do produto";
+
+/* Class = "UILabel"; text = " Bem-vindo ao Controle-se"; ObjectID = "q0E-PY-8iW"; */
+"q0E-PY-8iW.text" = " Bem-vindo ao Controle-se";
+
+/* Class = "UINavigationItem"; title = "Orçamento Ilimitado"; ObjectID = "v8w-hl-aAM"; */
+"v8w-hl-aAM.title" = "Orçamento Ilimitado";
+
+/* Class = "UILabel"; text = "Data "; ObjectID = "vW8-7n-lIH"; */
+"vW8-7n-lIH.text" = "Data ";
+
+/* Class = "UILabel"; text = "0000"; ObjectID = "yoh-iS-ebO"; */
+"yoh-iS-ebO.text" = "0000";
+
+/* Class = "UILabel"; text = "dd/mm/aaaa"; ObjectID = "ywy-CI-N9w"; */
+"ywy-CI-N9w.text" = "dd/mm/aaaa";
+
+/* Class = "UILabel"; text = "0000"; ObjectID = "zNT-OK-Bxg"; */
+"zNT-OK-Bxg.text" = "0000";
+
+/* Class = "UIBarButtonItem"; title = "Adicionar item"; ObjectID = "zUk-1E-9Cq"; */
+"zUk-1E-9Cq.title" = "Adicionar item";
