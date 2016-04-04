@@ -1,15 +1,14 @@
 //
-//  controlTests.swift
-//  controlTests
+//  ComandaTests.swift
+//  ComandaTests
 //
-//  Created by Amanda Campos on 04/02/16.
+//  Created by Amanda Campos on 01/04/16.
 //  Copyright © 2016 Amanda Campos. All rights reserved.
 //
 
 import XCTest
-@testable import control
 
-class controlTests: XCTestCase {
+class ComandaTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

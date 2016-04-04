@@ -48,6 +48,26 @@
                ReferencedContainer = "container:control.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3742F7881CAEC684004F93F5"
+               BuildableName = "ComandaUITests.xctest"
+               BlueprintName = "ComandaUITests"
+               ReferencedContainer = "container:control.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3742F7961CAEC6A8004F93F5"
+               BuildableName = "ComandaTests.xctest"
+               BlueprintName = "ComandaTests"
+               ReferencedContainer = "container:control.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
