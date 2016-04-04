@@ -8,7 +8,7 @@
         <!--home-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="home" id="AgC-eL-Hgc" customClass="InicialController" customModule="Control_Watch_Extension">
+                <controller identifier="home" id="AgC-eL-Hgc" customClass="InicialController" customModule="Comanda_Watch_Extension">
                     <items>
                         <label width="136" height="42.5" alignment="left" text="Bem - vindo" textAlignment="center" numberOfLines="2" id="hfj-TJ-Dz3"/>
                         <button width="1" alignment="left" title="Gasto limitado" id="8bI-qS-YXv">
@@ -35,7 +35,7 @@
         <!--Done-->
         <scene sceneID="R0m-VP-4vt">
             <objects>
-                <controller identifier="numericKeyboard" title="Done" id="QKX-3x-CSC" customClass="NumberPadController" customModule="Control_Watch_Extension">
+                <controller identifier="numericKeyboard" title="Done" id="QKX-3x-CSC" customClass="NumberPadController" customModule="Comanda_Watch_Extension">
                     <items>
                         <group width="1" height="30" alignment="left" id="cca-68-HDh">
                             <items>
@@ -132,7 +132,7 @@
         <!--ilimitado-->
         <scene sceneID="6j3-hM-KLY">
             <objects>
-                <controller identifier="ilimitado" id="pCi-Vr-9NO" customClass="PrecoIlimitadoController" customModule="Control_Watch_Extension">
+                <controller identifier="ilimitado" id="pCi-Vr-9NO" customClass="PrecoIlimitadoController" customModule="Comanda_Watch_Extension">
                     <items>
                         <label width="1" height="30" alignment="center" text="Total" textAlignment="center" id="Xnj-as-Zoe"/>
                         <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="THw-km-kQh">
@@ -162,7 +162,7 @@
         <!--idtxt-->
         <scene sceneID="Dgv-5K-vSa">
             <objects>
-                <controller identifier="idtxt" id="hBc-Yb-6c8" customClass="PrecoLimitadoInterfaceController" customModule="Control_Watch_Extension">
+                <controller identifier="idtxt" id="hBc-Yb-6c8" customClass="PrecoLimitadoInterfaceController" customModule="Comanda_Watch_Extension">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="uOO-T5-Mop">
                             <items>
@@ -194,7 +194,7 @@
         <!--nomearLista-->
         <scene sceneID="Mmh-zO-YZB">
             <objects>
-                <controller identifier="nomearLista" id="4l2-xf-tk2" customClass="NomearListaInterfaceController" customModule="Control_Watch_Extension">
+                <controller identifier="nomearLista" id="4l2-xf-tk2" customClass="NomearListaInterfaceController" customModule="Comanda_Watch_Extension">
                     <items>
                         <label width="1" height="50" alignment="center" text="Nome da lista:" textAlignment="center" id="K2d-lF-0wb"/>
                         <label width="1" alignment="center" text="Ex: Restaurante" textAlignment="center" id="SXk-KR-43D">
@@ -223,7 +223,7 @@
         <!--limitado-->
         <scene sceneID="L2Z-7W-pdQ">
             <objects>
-                <controller identifier="limitado" id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Control_Watch_Extension">
+                <controller identifier="limitado" id="xdg-Vd-l7w" customClass="DefinirLimiteController" customModule="Comanda_Watch_Extension">
                     <items>
                         <label width="1" height="30" alignment="center" text="Limite" textAlignment="center" id="07T-ox-8oN"/>
                         <group width="70" height="70" alignment="center" verticalAlignment="center" radius="35" id="eIc-7t-kJP">
