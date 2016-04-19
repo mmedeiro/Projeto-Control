@@ -26,6 +26,7 @@
 		37E08BE41C63BBD500369E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE21C63BBD500369E84 /* Main.storyboard */; };
 		37E08BE61C63BBD500369E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE51C63BBD500369E84 /* Assets.xcassets */; };
 		37E08BE91C63BBD500369E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE71C63BBD500369E84 /* LaunchScreen.storyboard */; };
+		37EFA3A81CC698EF00C2F2BF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */; };
 		4B004C281C9C4B4C002610C5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B004C261C9C4B4C002610C5 /* Interface.storyboard */; };
 		4B004C2A1C9C4B4C002610C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B004C291C9C4B4C002610C5 /* Assets.xcassets */; };
 		4B004C311C9C4B4C002610C5 /* Comanda-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B004C301C9C4B4C002610C5 /* Comanda-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -130,6 +131,7 @@
 		37E08BE51C63BBD500369E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E08BE81C63BBD500369E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E08BEA1C63BBD500369E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		4B004C241C9C4B4C002610C5 /* Comanda-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comanda-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B004C271C9C4B4C002610C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4B004C291C9C4B4C002610C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				37CB44781C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift */,
 				377361711C9782D9007236BF /* ListaDeGastosTableViewCell.swift */,
 				4B3F614C1C9B3AA4008BB972 /* DetalheListaTableViewCell.swift */,
+				37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */,
 			);
 			name = celulas;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				4B3F61451C98950D008BB972 /* Lista+CoreDataProperties.swift in Sources */,
 				4B3F61461C98950D008BB972 /* Lista.swift in Sources */,
 				377361741C9782FA007236BF /* ListaDeGastosTableViewController.swift in Sources */,
+				37EFA3A81CC698EF00C2F2BF /* MainTableViewCell.swift in Sources */,
 				377361721C9782D9007236BF /* ListaDeGastosTableViewCell.swift in Sources */,
 				4B3F614F1C9B3B3C008BB972 /* DetalhesListaViewController.swift in Sources */,
 				37CB44791C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift in Sources */,

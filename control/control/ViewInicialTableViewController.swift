@@ -25,6 +25,7 @@ class ViewInicialTableViewController: UITableViewController, WCSessionDelegate {
         navigationController!.navigationBar.tintColor = UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8)
         
         //design dos botões iniciais
+        labelInicial.text = "Bem-vindo ao \n Minha Comanda"
         labelInicial.layer.cornerRadius = 230/2
         labelInicial.layer.borderColor = UIColor.whiteColor().CGColor
         labelInicial.layer.backgroundColor = UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8).CGColor

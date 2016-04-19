@@ -117,7 +117,7 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
             textField.keyboardType = .Default
             
         }
-        
+                
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
             precoTxtField = textField
             textField.placeholder = "Valor"

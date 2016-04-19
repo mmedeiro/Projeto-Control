@@ -70,8 +70,7 @@ class ListaManager {
         do {
             let fetchedResults = try manegedContext.executeFetchRequest(fd) as? [NSManagedObject]
             
-            if let results = fetchedResults as? [Lista]
-            {
+            if let results = fetchedResults as? [Lista] {
                 
                 for message in results {
                     
