@@ -12,6 +12,7 @@ class PrecoFixoDetalhesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var precoLabel: UILabel!
     @IBOutlet weak var descricaoLabel: UILabel!
+    @IBOutlet weak var quantidadeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

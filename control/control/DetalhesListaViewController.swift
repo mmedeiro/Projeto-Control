@@ -33,6 +33,7 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
         dataLista.text = dataString
         
         produtos = lista.produtos?.allObjects as! [Produtos]
+    
         
         for i in produtos{
             soma = soma + Double(i.valor!)
@@ -46,7 +47,7 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
                 valorLimite.text? = "Você ultrapassou seu" + " limite inicial de R$ \(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             } else {
-                valorLimite.text? = "Parabéns, você não ultrapassou"+" seu limite de R$ \(lista.limite!)"
+                valorLimite.text? = "Parabéns, você não ultrapassou \n" + "seu limite de R$ \(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             }
         }

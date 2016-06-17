@@ -57,4 +57,23 @@ class ProdutoManager {
         }
     }
 
+    func deletarUmProduto(produto: Produtos){
+        var valor = produto.valor
+        var quantidade = produto.quantidade
+        
+        if Double(quantidade!) > 1 {
+            valor = Double(valor!)/Double(quantidade!)
+            quantidade = Double(quantidade!) - 1
+            valor = Double(valor!) * Double(quantidade!)
+            
+    produto.valor = valor
+    produto.quantidade = quantidade
+
+            save()
+        } else {
+            
+                manegedContext.deleteObject(produto)
+                save()
+        }
+    }
 }

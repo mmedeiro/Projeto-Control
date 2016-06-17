@@ -11,9 +11,9 @@
 		3742F78C1CAEC684004F93F5 /* ComandaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742F78B1CAEC684004F93F5 /* ComandaUITests.swift */; };
 		3742F79A1CAEC6A8004F93F5 /* ComandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742F7991CAEC6A8004F93F5 /* ComandaTests.swift */; };
 		3742F7A21CAEC804004F93F5 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742F7A11CAEC804004F93F5 /* SnapshotHelper.swift */; };
+		3747EB3A1D11996B00A65748 /* InicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747EB391D11996B00A65748 /* InicialViewController.swift */; };
 		375874731C95D22A0055C166 /* ModeloMetodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375874721C95D22A0055C166 /* ModeloMetodos.swift */; };
 		375874751C9725DD0055C166 /* PrecoFixoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375874741C9725DD0055C166 /* PrecoFixoTableViewController.swift */; };
-		3773614D1C973F7D007236BF /* ViewInicialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3773614C1C973F7D007236BF /* ViewInicialTableViewController.swift */; };
 		377361721C9782D9007236BF /* ListaDeGastosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361711C9782D9007236BF /* ListaDeGastosTableViewCell.swift */; };
 		377361741C9782FA007236BF /* ListaDeGastosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361731C9782FA007236BF /* ListaDeGastosTableViewController.swift */; };
 		377361771C9B15E6007236BF /* Produtos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377361751C9B15E6007236BF /* Produtos+CoreDataProperties.swift */; };
@@ -26,7 +26,7 @@
 		37E08BE41C63BBD500369E84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE21C63BBD500369E84 /* Main.storyboard */; };
 		37E08BE61C63BBD500369E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE51C63BBD500369E84 /* Assets.xcassets */; };
 		37E08BE91C63BBD500369E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E08BE71C63BBD500369E84 /* LaunchScreen.storyboard */; };
-		37EFA3A81CC698EF00C2F2BF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */; };
+		37EFA3AA1CC6CC3F00C2F2BF /* ConfiguracaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EFA3A91CC6CC3F00C2F2BF /* ConfiguracaoTableViewController.swift */; };
 		4B004C281C9C4B4C002610C5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B004C261C9C4B4C002610C5 /* Interface.storyboard */; };
 		4B004C2A1C9C4B4C002610C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B004C291C9C4B4C002610C5 /* Assets.xcassets */; };
 		4B004C311C9C4B4C002610C5 /* Comanda-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B004C301C9C4B4C002610C5 /* Comanda-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -111,9 +111,9 @@
 		3742F7991CAEC6A8004F93F5 /* ComandaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComandaTests.swift; sourceTree = "<group>"; };
 		3742F79B1CAEC6A8004F93F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3742F7A11CAEC804004F93F5 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		3747EB391D11996B00A65748 /* InicialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InicialViewController.swift; sourceTree = "<group>"; };
 		375874721C95D22A0055C166 /* ModeloMetodos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeloMetodos.swift; sourceTree = "<group>"; };
 		375874741C9725DD0055C166 /* PrecoFixoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoFixoTableViewController.swift; sourceTree = "<group>"; };
-		3773614C1C973F7D007236BF /* ViewInicialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInicialTableViewController.swift; sourceTree = "<group>"; };
 		377361711C9782D9007236BF /* ListaDeGastosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeGastosTableViewCell.swift; sourceTree = "<group>"; };
 		377361731C9782FA007236BF /* ListaDeGastosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeGastosTableViewController.swift; sourceTree = "<group>"; };
 		377361751C9B15E6007236BF /* Produtos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Produtos+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		37E08BE51C63BBD500369E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E08BE81C63BBD500369E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E08BEA1C63BBD500369E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		37EFA3A91CC6CC3F00C2F2BF /* ConfiguracaoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracaoTableViewController.swift; sourceTree = "<group>"; };
 		4B004C241C9C4B4C002610C5 /* Comanda-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comanda-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B004C271C9C4B4C002610C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4B004C291C9C4B4C002610C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,7 +193,6 @@
 				37CB44781C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift */,
 				377361711C9782D9007236BF /* ListaDeGastosTableViewCell.swift */,
 				4B3F614C1C9B3AA4008BB972 /* DetalheListaTableViewCell.swift */,
-				37EFA3A71CC698EF00C2F2BF /* MainTableViewCell.swift */,
 			);
 			name = celulas;
 			sourceTree = "<group>";
@@ -256,12 +255,13 @@
 				4B3F61471C98993E008BB972 /* Persistencia */,
 				3733F9D41C70DE0200E03CE6 /* celulas */,
 				37E08BDE1C63BBD500369E84 /* AppDelegate.swift */,
+				3747EB391D11996B00A65748 /* InicialViewController.swift */,
 				375874721C95D22A0055C166 /* ModeloMetodos.swift */,
-				3773614C1C973F7D007236BF /* ViewInicialTableViewController.swift */,
 				375874741C9725DD0055C166 /* PrecoFixoTableViewController.swift */,
 				37CB44761C93AE5400316803 /* PrecoIlimitadoViewController.swift */,
 				377361731C9782FA007236BF /* ListaDeGastosTableViewController.swift */,
 				4B3F614E1C9B3B3C008BB972 /* DetalhesListaViewController.swift */,
+				37EFA3A91CC6CC3F00C2F2BF /* ConfiguracaoTableViewController.swift */,
 				37E08BE21C63BBD500369E84 /* Main.storyboard */,
 				37E08BE51C63BBD500369E84 /* Assets.xcassets */,
 				37E08BE71C63BBD500369E84 /* LaunchScreen.storyboard */,
@@ -537,14 +537,14 @@
 				4B3F61451C98950D008BB972 /* Lista+CoreDataProperties.swift in Sources */,
 				4B3F61461C98950D008BB972 /* Lista.swift in Sources */,
 				377361741C9782FA007236BF /* ListaDeGastosTableViewController.swift in Sources */,
-				37EFA3A81CC698EF00C2F2BF /* MainTableViewCell.swift in Sources */,
 				377361721C9782D9007236BF /* ListaDeGastosTableViewCell.swift in Sources */,
 				4B3F614F1C9B3B3C008BB972 /* DetalhesListaViewController.swift in Sources */,
 				37CB44791C93AE9200316803 /* PrecoIlimitadoTableViewCell.swift in Sources */,
 				4B3F614B1C989A6D008BB972 /* ProdutoManager.swift in Sources */,
 				4B3F614D1C9B3AA4008BB972 /* DetalheListaTableViewCell.swift in Sources */,
-				3773614D1C973F7D007236BF /* ViewInicialTableViewController.swift in Sources */,
 				37E08BDF1C63BBD500369E84 /* AppDelegate.swift in Sources */,
+				3747EB3A1D11996B00A65748 /* InicialViewController.swift in Sources */,
+				37EFA3AA1CC6CC3F00C2F2BF /* ConfiguracaoTableViewController.swift in Sources */,
 				4B3F613E1C989423008BB972 /* control.xcdatamodeld in Sources */,
 				377361781C9B15E6007236BF /* Produtos.swift in Sources */,
 				37CB44771C93AE5400316803 /* PrecoIlimitadoViewController.swift in Sources */,

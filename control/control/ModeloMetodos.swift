@@ -10,8 +10,6 @@ import UIKit
 
 class ModeloMetodos: NSObject {
     
-    //bugou
-    
     func designBotao(preco: UILabel) {
         
         preco.shadowColor = UIColor.blackColor()
@@ -19,7 +17,7 @@ class ModeloMetodos: NSObject {
         
         preco.layer.cornerRadius = 125/2
         preco.layer.borderColor = UIColor.whiteColor().CGColor
-        preco.layer.backgroundColor = UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8).CGColor
+        preco.layer.backgroundColor = UIColor.whiteColor().CGColor
         
         preco.layer.shadowColor = UIColor.blackColor().CGColor
         preco.layer.shadowOffset = CGSizeZero
@@ -84,11 +82,5 @@ class ModeloMetodos: NSObject {
         let secondViewController = view.storyboard!.instantiateViewControllerWithIdentifier("teste") as! ListaDeGastosTableViewController
         secondViewController.arrayLista = arrayNomeLista
         navigation.pushViewController(secondViewController, animated: true)
-    }
-    
-    func salvarDemaisItens(index: NSIndexPath, arrayNome: Array<String>, valor: Float, lista: Lista!){
-        
-        //lista -> arrayProd -> procurar o produto -> atualizar valor
-        
     }
 }

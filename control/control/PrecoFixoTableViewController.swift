@@ -17,7 +17,6 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
     var precoFake = String()
     var arrayNomeLista: Array<String> = []
     
-    @IBOutlet weak var nomeDaComanda: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var precoEscolhido: UILabel!
     @IBOutlet weak var buttonAddItem: UIBarButtonItem!
@@ -26,7 +25,10 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBarHidden = false
+        //configuração para cor da navigation
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 137/255, blue: 104/255, alpha: 1)
+        
         valorDoLimite()
         
         //botão adc item e finalizar lista hidden
@@ -36,12 +38,15 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         self.lista = ListaManager.sharedInstance.novaLista()
         self.lista.nome = nil
         
-        mm.designBotao(precoEscolhido)
     }
     
     //conf. tabBar
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
+        
+        //configuração para cor da navigation
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 137/255, blue: 104/255, alpha: 1)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -62,20 +67,24 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         return produtos.count
     }
     
+    //configuração das label na celula
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: PrecoFixoDetalhesTableViewCell = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! PrecoFixoDetalhesTableViewCell
         
         cell.descricaoLabel.text = produtos[indexPath.row].nome!.capitalizedString
-        if let numFormatado = produtos[indexPath.row].valor{
-            cell.precoLabel.text = "\(numFormatado)"
-        }
+        cell.quantidadeLabel.text = "\(produtos[indexPath.row].quantidade!) x"
+//        if let numFormatado = produtos[indexPath.row].valor{
+        cell.precoLabel.text = "\(produtos[indexPath.row].valor!)"
+//        }
         
+        //decrementa o preço inserido do preço total
         decrementar()
         
         return cell
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        //caso queria adicionar o mesmo produto mais uma vez
         let maisUm = UITableViewRowAction(style: .Normal, title: "+1") { (action, index) -> Void in
             tableView.editing = false
             
@@ -93,14 +102,26 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
             self.tableView.reloadData()
         }
         
-        maisUm.backgroundColor = UIColor(colorLiteralRed: 91/255, green: 59/255, blue: 128/255, alpha: 1)
+        maisUm.backgroundColor = UIColor(red: 153/255, green: 179/255, blue: 194/255, alpha: 1)
         
-        return [maisUm]
+        //caso queira tirar um produto
+        let deletar = UITableViewRowAction(style: .Default, title: "-1") { (action, index) in
+            let produt = self.produtos[indexPath.row]
+            
+            if Double(self.produtos[indexPath.row].quantidade!) == 1{
+                self.produtos.removeAtIndex(indexPath.row)
+            }
+            
+            ProdutoManager.sharedInstance.deletarUmProduto(produt)
+            
+            self.tableView.reloadData()
+        }
+        
+        return [deletar, maisUm]
     }
     
-    
+    //decrementa o preço inserido do preço total
     func decrementar(){
-        
         let valorInicial = Double(precoFake)
         var valorInicialAlterado = valorInicial!
         for i in produtos{
@@ -110,7 +131,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         precoEscolhido.text? = "\(valorInicialAlterado)"
     }
     
-    
+    //alerta para adicionar nome do produto e preço
     @IBAction func adcItem(sender: AnyObject) {
         
         let alertaNovoItem = UIAlertController(title: nil, message: "", preferredStyle: .Alert)
@@ -140,6 +161,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                 
                 let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
                 alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                
                 self.presentViewController(alertaCampoVazio, animated: true, completion: nil)
                 
             } else {

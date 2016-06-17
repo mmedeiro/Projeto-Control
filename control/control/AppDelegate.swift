@@ -17,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+//        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+
         return true
     }
 

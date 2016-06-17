@@ -11,6 +11,7 @@ import UIKit
 class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let mm = ModeloMetodos()
+    let img = UIImage(named: "backButton") as UIImage?
     var lista: Lista!
     var arrayNomeLista: Array<String> = []
     var produto : Produtos!
@@ -22,23 +23,24 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBarHidden = false
-        
+        //configuração da navigation 
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 137/255, blue: 104/255, alpha: 1)
+
         finalizarCompras.enabled = false
         
         //inicializa lista
         self.lista = ListaManager.sharedInstance.novaLista()
         self.lista.nome = nil
         
-        mm.designBotao(totalDaComanda)
-        
     }
     
-    override func viewWillAppear(animated: Bool) { self.tabBarController?.tabBar.hidden = true }
-    
-    override func viewWillDisappear(animated: Bool) {
-        //caso o usuário sai da lista -> deve-se fazer um alerta para avisa-lo
+    override func viewWillAppear(animated: Bool) {
+        //configuração da tabBar e Navigation
+        self.tabBarController?.tabBar.hidden = true
+        
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 137/255, blue: 104/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,9 +60,8 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         let cell  = tableView.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! PrecoIlimitadoTableViewCell
         
         cell.nomeItemIlimitado.text = produtos[indexPath.row].nome?.capitalizedString
-        if let numFormatado = produtos[indexPath.row].valor{
-            cell.precoItemIlimitado.text  = "\(numFormatado)"
-        }
+        cell.precoItemIlimitado.text  = "\(produtos[indexPath.row].valor!)"
+        cell.quantidadeLabel.text = "\(produtos[indexPath.row].quantidade!) x"
         
         self.incrementar()
         
@@ -90,20 +91,21 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
             self.tableView.reloadData()
         }
         
-        maisUm.backgroundColor = UIColor(colorLiteralRed: 91/255, green: 59/255, blue: 128/255, alpha: 1)
+        maisUm.backgroundColor = UIColor(red: 153/255, green: 179/255, blue: 194/255, alpha: 1)
         
-        return [maisUm]
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Deletar produto
-            //            let produt = produtos[indexPath.row]
-            //            arrayNomeLista.removeAtIndex(indexPath.row)
-            //            produtos.removeAtIndex(indexPath.row)
-            //            ProdutoManager.sharedInstance.delete(produt)
-            //            ProdutoManager.sharedInstance.save()
+        let deletar = UITableViewRowAction(style: .Default, title: "-1") { (action, index) in
+            let produt = self.produtos[indexPath.row]
+
+            if Double(self.produtos[indexPath.row].quantidade!) == 1{
+            self.produtos.removeAtIndex(indexPath.row)
+            }
+
+            ProdutoManager.sharedInstance.deletarUmProduto(produt)
+            
+            self.tableView.reloadData()
         }
+        
+        return [deletar, maisUm]
     }
     
     @IBAction func adcItem(sender: AnyObject) {
@@ -173,8 +175,6 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         
         self.presentViewController(alertaNovoItem, animated: true, completion: nil)
     }
-    
-    
     
     @IBAction func finalizarComanda(sender: AnyObject){
         mm.finalizarLista(navigationController!, view: self, arrayNomeLista: arrayNomeLista, lista: self.lista, tipo: "ilimitado")

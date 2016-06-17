@@ -17,23 +17,29 @@ class ListaDeGastosTableViewController: UITableViewController {
     var lista: Lista!
     var soma: Double!
     var count = 0
-    var img = UIImage(named: "backButton") as UIImage?
+    var labelNenhumaLista: UILabel = UILabel()
+    let img = UIImage(named: "back") as UIImage!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBarHidden = false
-        
+
+        //configuração da navigation
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 137/255, blue: 104/255, alpha: 1)
+
+        //conf. do botão de voltar na navigation
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
         myBackButton.addTarget(self, action: #selector(ListaDeGastosTableViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setImage(img, forState: UIControlState.Normal)
-        myBackButton.setTitle("Home", forState: UIControlState.Normal)
-        myBackButton.setTitleColor(UIColor(red: 27/255, green: 188/255, blue: 155/255, alpha: 0.8), forState: UIControlState.Normal)
+        myBackButton.setTitle("Inicial", forState: UIControlState.Normal)
+        myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
         listas = ListaManager.sharedInstance.buscarListas()
+        verificarLista()
         tableView.reloadData()
     }
     
@@ -71,17 +77,29 @@ class ListaDeGastosTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        //        self.navigationController!.popToRootViewControllerAnimated(true)
-        
-    }
-    
     private func FormatDate(date:NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
         return dateFormatter.stringFromDate(date)
     }
     
+    func verificarLista(){
+        if listas.count == 0{
+            labelNenhumaLista.frame = CGRect(x: 0, y: tableView.frame.size.height/2 - 40, width: tableView.frame.size.width, height: 30)
+            labelNenhumaLista.text = "Você ainda não possui nenhuma lista cadastrada"
+            labelNenhumaLista.textAlignment = .Center
+            labelNenhumaLista.numberOfLines = 3
+            labelNenhumaLista.textColor = UIColor.whiteColor()
+            labelNenhumaLista.adjustsFontSizeToFitWidth = true
+            self.tableView.addSubview(labelNenhumaLista)
+        } else {
+            self.tableView.removeFromSuperview()
+        }
+    }
+    
+    func popToRoot(sender:UIBarButtonItem){
+        self.navigationController!.popToRootViewControllerAnimated(true)
+    }
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -121,10 +139,6 @@ class ListaDeGastosTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func popToRoot(sender:UIBarButtonItem){
-        self.navigationController!.popToRootViewControllerAnimated(true)
-    }
-
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
