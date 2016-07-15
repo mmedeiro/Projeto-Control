@@ -152,6 +152,9 @@
 		4B3F614A1C989A6D008BB972 /* ProdutoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdutoManager.swift; sourceTree = "<group>"; };
 		4B3F614C1C9B3AA4008BB972 /* DetalheListaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheListaTableViewCell.swift; sourceTree = "<group>"; };
 		4B3F614E1C9B3B3C008BB972 /* DetalhesListaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesListaViewController.swift; sourceTree = "<group>"; };
+		4B6333901D399226002D993F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4B6333911D399226002D993F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4B6333921D399226002D993F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,6 +604,7 @@
 			children = (
 				37E08BE31C63BBD500369E84 /* Base */,
 				37D2FD051CAEB9560033C7B8 /* pt-BR */,
+				4B6333901D399226002D993F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -610,6 +614,7 @@
 			children = (
 				37E08BE81C63BBD500369E84 /* Base */,
 				37D2FD061CAEB9560033C7B8 /* pt-BR */,
+				4B6333911D399226002D993F /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 			children = (
 				4B004C271C9C4B4C002610C5 /* Base */,
 				37D2FD071CAEB9560033C7B8 /* pt-BR */,
+				4B6333921D399226002D993F /* en */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

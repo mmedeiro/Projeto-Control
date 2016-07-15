@@ -1,0 +1,93 @@
+
+/* Class = "WKInterfaceLabel"; text = "Limite"; ObjectID = "07T-ox-8oN"; */
+"07T-ox-8oN.text" = "Limite";
+
+/* Class = "WKInterfaceLabel"; text = "Limite:"; ObjectID = "321-aT-XXL"; */
+"321-aT-XXL.text" = "Limite:";
+
+/* Class = "WKInterfaceButton"; title = "Button"; ObjectID = "4MJ-f3-WRB"; */
+"4MJ-f3-WRB.title" = "Button";
+
+/* Class = "WKInterfaceButton"; title = "8"; ObjectID = "4ad-hy-L87"; */
+"4ad-hy-L87.title" = "8";
+
+/* Class = "WKInterfaceButton"; title = "Gasto limitado"; ObjectID = "8bI-qS-YXv"; */
+"8bI-qS-YXv.title" = "Gasto limitado";
+
+/* Class = "WKInterfaceButton"; title = "c"; ObjectID = "Bdk-CH-ZpM"; */
+"Bdk-CH-ZpM.title" = "c";
+
+/* Class = "WKInterfaceButton"; title = "0"; ObjectID = "EvK-rE-Awv"; */
+"EvK-rE-Awv.title" = "0";
+
+/* Class = "WKInterfaceLabel"; text = "Nome da lista:"; ObjectID = "K2d-lF-0wb"; */
+"K2d-lF-0wb.text" = "Nome da lista:";
+
+/* Class = "WKInterfaceLabel"; text = "Valor"; ObjectID = "LBD-qA-W1q"; */
+"LBD-qA-W1q.text" = "Valor";
+
+/* Class = "WKInterfaceButton"; title = "Definir nome"; ObjectID = "Mt3-cc-CMk"; */
+"Mt3-cc-CMk.title" = "Definir nome";
+
+/* Class = "WKInterfaceController"; title = "Done"; ObjectID = "QKX-3x-CSC"; */
+"QKX-3x-CSC.title" = "Done";
+
+/* Class = "WKInterfaceButton"; title = "Gasto ilimitado"; ObjectID = "Qih-xI-CKf"; */
+"Qih-xI-CKf.title" = "Gasto ilimitado";
+
+/* Class = "WKInterfaceLabel"; text = "Ex: Restaurante"; ObjectID = "SXk-KR-43D"; */
+"SXk-KR-43D.text" = "Ex: Restaurante";
+
+/* Class = "WKInterfaceLabel"; text = "Total"; ObjectID = "Xnj-as-Zoe"; */
+"Xnj-as-Zoe.text" = "Total";
+
+/* Class = "WKInterfaceButton"; title = "Inserir valor"; ObjectID = "bwM-iV-4dm"; */
+"bwM-iV-4dm.title" = "Inserir valor";
+
+/* Class = "WKInterfaceLabel"; text = "Total"; ObjectID = "d0p-dT-8cd"; */
+"d0p-dT-8cd.text" = "Total";
+
+/* Class = "WKInterfaceButton"; title = "Inserir valor"; ObjectID = "dZi-97-MhJ"; */
+"dZi-97-MhJ.title" = "Inserir valor";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "dh2-eJ-uCe"; */
+"dh2-eJ-uCe.text" = "Label";
+
+/* Class = "WKInterfaceButton"; title = "6"; ObjectID = "e4h-pa-CTD"; */
+"e4h-pa-CTD.title" = "6";
+
+/* Class = "WKInterfaceButton"; title = "Inserir limite"; ObjectID = "ffr-Wi-zRy"; */
+"ffr-Wi-zRy.title" = "Inserir limite";
+
+/* Class = "WKInterfaceButton"; title = "3"; ObjectID = "gPC-rp-cGV"; */
+"gPC-rp-cGV.title" = "3";
+
+/* Class = "WKInterfaceLabel"; text = "Bem - vindo"; ObjectID = "hfj-TJ-Dz3"; */
+"hfj-TJ-Dz3.text" = "Bem - vindo";
+
+/* Class = "WKInterfaceLabel"; text = "Valor"; ObjectID = "hxQ-Bz-ju2"; */
+"hxQ-Bz-ju2.text" = "Valor";
+
+/* Class = "WKInterfaceButton"; title = "5"; ObjectID = "jv8-TV-h6G"; */
+"jv8-TV-h6G.title" = "5";
+
+/* Class = "WKInterfaceButton"; title = "7"; ObjectID = "lqe-Z9-aWo"; */
+"lqe-Z9-aWo.title" = "7";
+
+/* Class = "WKInterfaceLabel"; text = "Gasto Total"; ObjectID = "p3s-hj-uQp"; */
+"p3s-hj-uQp.text" = "Gasto Total";
+
+/* Class = "WKInterfaceButton"; title = "2"; ObjectID = "rUN-pA-cXi"; */
+"rUN-pA-cXi.title" = "2";
+
+/* Class = "WKInterfaceButton"; title = "9"; ObjectID = "s23-FP-LSd"; */
+"s23-FP-LSd.title" = "9";
+
+/* Class = "WKInterfaceButton"; title = "."; ObjectID = "ve0-c4-bHd"; */
+"ve0-c4-bHd.title" = ".";
+
+/* Class = "WKInterfaceButton"; title = "1"; ObjectID = "yau-2W-3dZ"; */
+"yau-2W-3dZ.title" = "1";
+
+/* Class = "WKInterfaceButton"; title = "4"; ObjectID = "zbl-ZH-eoX"; */
+"zbl-ZH-eoX.title" = "4";

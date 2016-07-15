@@ -1,0 +1,150 @@
+
+/* Class = "UIButton"; normalTitle = "Lista de Gastos"; ObjectID = "3VC-ab-Bdd"; */
+"3VC-ab-Bdd.normalTitle" = "List of expenses";
+
+/* Class = "UITableViewSection"; headerTitle = "dados"; ObjectID = "3ko-Uo-GS3"; */
+"3ko-Uo-GS3.headerTitle" = "data";
+
+/* Class = "UILabel"; text = "Limite"; ObjectID = "5Bo-Aa-95z"; */
+"5Bo-Aa-95z.text" = "Limit";
+
+/* Class = "UILabel"; text = "Valor limite"; ObjectID = "6VJ-p9-tAP"; */
+"6VJ-p9-tAP.text" = "Limit Value";
+
+/* Class = "UILabel"; text = "Mariana Medeiro"; ObjectID = "7oB-Bq-zAG"; */
+"7oB-Bq-zAG.text" = "Mariana Medeiro";
+
+/* Class = "UILabel"; text = "Nome da lista"; ObjectID = "AhJ-UF-VUg"; */
+"AhJ-UF-VUg.text" = "List Name";
+
+/* Class = "UIButton"; normalTitle = "Curtir no Facebook"; ObjectID = "BGn-VR-vOI"; */
+"BGn-VR-vOI.normalTitle" = "Like on Facebook";
+
+/* Class = "UIButton"; normalTitle = "Apagar todos os dados"; ObjectID = "C9X-iz-upv"; */
+"C9X-iz-upv.normalTitle" = "Clear all";
+
+/* Class = "UINavigationItem"; title = "Lista de Gastos"; ObjectID = "DFo-sg-RCb"; */
+"DFo-sg-RCb.title" = "List of expenses";
+
+/* Class = "UIBarButtonItem"; title = "Adicionar Item"; ObjectID = "DIu-wp-cjT"; */
+"DIu-wp-cjT.title" = "Add Item";
+
+/* Class = "UIButton"; normalTitle = "Gasto Ilimitado"; ObjectID = "Fij-l4-42x"; */
+"Fij-l4-42x.normalTitle" = "Unlimited Spend";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "JsS-bv-csZ"; */
+"JsS-bv-csZ.text" = "Total";
+
+/* Class = "UILabel"; text = "Desenvolvedora iOS"; ObjectID = "JxG-q9-3WQ"; */
+"JxG-q9-3WQ.text" = "iOS Developer";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Lac-0I-i8P"; */
+"Lac-0I-i8P.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Finalizar Lista"; ObjectID = "Lpx-I4-eAO"; */
+"Lpx-I4-eAO.title" = "End List";
+
+/* Class = "UINavigationItem"; title = "Orçamento Limitado"; ObjectID = "M0V-si-TYd"; */
+"M0V-si-TYd.title" = "Limited Budget";
+
+/* Class = "UIBarButtonItem"; title = "Alterar Limite"; ObjectID = "NTg-pE-2Zm"; */
+"NTg-pE-2Zm.title" = "Change Limit";
+
+/* Class = "UILabel"; text = "Valor gasto"; ObjectID = "PNv-IJ-Z0u"; */
+"PNv-IJ-Z0u.text" = "Amount Spent";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Q4F-7q-sLW"; */
+"Q4F-7q-sLW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Minha comanda"; ObjectID = "S4G-is-MVv"; */
+"S4G-is-MVv.text" = "Minha comanda";
+
+/* Class = "UILabel"; text = "quant"; ObjectID = "V2U-OD-xYZ"; */
+"V2U-OD-xYZ.text" = "quantity";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "Vo6-hN-Wga"; */
+"Vo6-hN-Wga.text" = "Comanda";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "YTO-wH-zuP"; */
+"YTO-wH-zuP.text" = "Comanda";
+
+/* Class = "UILabel"; text = "Nome produto"; ObjectID = "Z8b-Qd-KIb"; */
+"Z8b-Qd-KIb.text" = "Product Name";
+
+/* Class = "UILabel"; text = "Preço"; ObjectID = "ZLK-6w-FYw"; */
+"ZLK-6w-FYw.text" = "Price";
+
+/* Class = "UITabBarItem"; title = "Limitar gastos"; ObjectID = "ZaV-g7-fyr"; */
+"ZaV-g7-fyr.title" = "Spending limit";
+
+/* Class = "UILabel"; text = "Comanda"; ObjectID = "a3a-iW-s0U"; */
+"a3a-iW-s0U.text" = "Comanda";
+
+/* Class = "UIButton"; normalTitle = "Avaliar na App Store"; ObjectID = "byW-5m-J4Y"; */
+"byW-5m-J4Y.normalTitle" = "Rate in the AppStore";
+
+/* Class = "UILabel"; text = "Nome da lista"; ObjectID = "cjE-Uw-2b0"; */
+"cjE-Uw-2b0.text" = "List Name";
+
+/* Class = "UILabel"; text = "R$"; ObjectID = "dpq-3l-GjL"; */
+"dpq-3l-GjL.text" = "$";
+
+/* Class = "UILabel"; text = "Amanda Campos"; ObjectID = "e37-tI-Bhj"; */
+"e37-tI-Bhj.text" = "Amanda Campos";
+
+/* Class = "UILabel"; text = "Preco"; ObjectID = "eB7-fW-fkd"; */
+"eB7-fW-fkd.text" = "Price";
+
+/* Class = "UILabel"; text = "R$"; ObjectID = "eud-OF-KhX"; */
+"eud-OF-KhX.text" = "$";
+
+/* Class = "UILabel"; text = "quant"; ObjectID = "hA8-co-UlN"; */
+"hA8-co-UlN.text" = "quantity";
+
+/* Class = "UIBarButtonItem"; title = "Finalizar Lista"; ObjectID = "iVQ-cI-4gF"; */
+"iVQ-cI-4gF.title" = "Finish List";
+
+/* Class = "UILabel"; text = "Total gasto"; ObjectID = "iYY-T9-te6"; */
+"iYY-T9-te6.text" = "Total spend";
+
+/* Class = "UINavigationItem"; title = "Configuração"; ObjectID = "nV2-3H-tKU"; */
+"nV2-3H-tKU.title" = "Settings";
+
+/* Class = "UILabel"; text = "Nome do produto"; ObjectID = "nsx-aa-BQX"; */
+"nsx-aa-BQX.text" = "Product Name";
+
+/* Class = "UILabel"; text = "Desenvolvedora iOS"; ObjectID = "p1F-BN-Ttb"; */
+"p1F-BN-Ttb.text" = "iOS Developer";
+
+/* Class = "UITableViewSection"; headerTitle = "desenvolvedores"; ObjectID = "pBM-sa-oQ9"; */
+"pBM-sa-oQ9.headerTitle" = "developers";
+
+/* Class = "UITableViewSection"; headerTitle = "sobre"; ObjectID = "rAK-rg-xnI"; */
+"rAK-rg-xnI.headerTitle" = "about";
+
+/* Class = "UIButton"; normalTitle = "Contate-nos"; ObjectID = "usG-F8-F2J"; */
+"usG-F8-F2J.normalTitle" = "Contact us";
+
+/* Class = "UINavigationItem"; title = "Orçamento Ilimitado"; ObjectID = "v8w-hl-aAM"; */
+"v8w-hl-aAM.title" = "Unlimited Budget";
+
+/* Class = "UILabel"; text = "Data "; ObjectID = "vW8-7n-lIH"; */
+"vW8-7n-lIH.text" = "Date ";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "x44-35-dim"; */
+"x44-35-dim.title" = "Item";
+
+/* Class = "UILabel"; text = "0000"; ObjectID = "yoh-iS-ebO"; */
+"yoh-iS-ebO.text" = "0000";
+
+/* Class = "UILabel"; text = "dd/mm/aaaa"; ObjectID = "ywy-CI-N9w"; */
+"ywy-CI-N9w.text" = "mm/dd/aaaa";
+
+/* Class = "UILabel"; text = "quant"; ObjectID = "zNT-OK-Bxg"; */
+"zNT-OK-Bxg.text" = "quantity";
+
+/* Class = "UIBarButtonItem"; title = "Adicionar item"; ObjectID = "zUk-1E-9Cq"; */
+"zUk-1E-9Cq.title" = "Add Item";
+
+/* Class = "UIButton"; normalTitle = "Gasto Limitado"; ObjectID = "zX2-FM-9KP"; */
+"zX2-FM-9KP.normalTitle" = "Limited Spend";

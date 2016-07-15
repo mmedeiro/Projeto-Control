@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-               BuildableName = "Control-Watch.app"
-               BlueprintName = "Control-Watch"
+               BuildableName = "Comanda-Watch.app"
+               BlueprintName = "Comanda-Watch"
                ReferencedContainer = "container:control.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37E08BDA1C63BBD500369E84"
-               BuildableName = "control.app"
-               BlueprintName = "control"
+               BuildableName = "Comanda.app"
+               BlueprintName = "Comanda"
                ReferencedContainer = "container:control.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B004C2F1C9C4B4C002610C5"
-               BuildableName = "Control-Watch Extension.appex"
-               BlueprintName = "Control-Watch Extension"
+               BuildableName = "Comanda-Watch Extension.appex"
+               BlueprintName = "Comanda-Watch Extension"
                ReferencedContainer = "container:control.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,13 +56,33 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3742F7881CAEC684004F93F5"
+               BuildableName = "ComandaUITests.xctest"
+               BlueprintName = "ComandaUITests"
+               ReferencedContainer = "container:control.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3742F7961CAEC6A8004F93F5"
+               BuildableName = "ComandaTests.xctest"
+               BlueprintName = "ComandaTests"
+               ReferencedContainer = "container:control.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-            BuildableName = "Control-Watch.app"
-            BlueprintName = "Control-Watch"
+            BuildableName = "Comanda-Watch.app"
+            BlueprintName = "Comanda-Watch"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -88,8 +108,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-            BuildableName = "Control-Watch.app"
-            BlueprintName = "Control-Watch"
+            BuildableName = "Comanda-Watch.app"
+            BlueprintName = "Comanda-Watch"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
@@ -97,8 +117,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-            BuildableName = "Control-Watch.app"
-            BlueprintName = "Control-Watch"
+            BuildableName = "Comanda-Watch.app"
+            BlueprintName = "Comanda-Watch"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -120,8 +140,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-            BuildableName = "Control-Watch.app"
-            BlueprintName = "Control-Watch"
+            BuildableName = "Comanda-Watch.app"
+            BlueprintName = "Comanda-Watch"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
@@ -129,8 +149,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B004C231C9C4B4C002610C5"
-            BuildableName = "Control-Watch.app"
-            BlueprintName = "Control-Watch"
+            BuildableName = "Comanda-Watch.app"
+            BlueprintName = "Comanda-Watch"
             ReferencedContainer = "container:control.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
