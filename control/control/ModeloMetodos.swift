@@ -26,12 +26,12 @@ class ModeloMetodos: NSObject {
     }
     
     func finalizarLista(navigation: UINavigationController, view: UIViewController, arrayNomeLista: Array<String>, lista: Lista, tipo: String){
-        let alertaNovoLimite = UIAlertController(title: nil, message: "Digite um nome para sua comanda", preferredStyle: .Alert)
+        let alertaNovoLimite = UIAlertController(title: nil, message: NSLocalizedString("alerta_nome_comanda", comment: "Alerta nome comanda"), preferredStyle: .Alert)
         var limiteTxtField = UITextField()
         
         alertaNovoLimite.addTextFieldWithConfigurationHandler { (textField) -> Void in
             limiteTxtField = textField
-            textField.placeholder = "Nome da comanda"
+            textField.placeholder = NSLocalizedString("nome_comanda", comment: "Nome")
             textField.keyboardType = .Default
         }
         
@@ -39,12 +39,12 @@ class ModeloMetodos: NSObject {
         alertaNovoLimite.view.layer.shadowOffset = CGSizeZero
         alertaNovoLimite.view.layer.shadowOpacity = 1
         
-        let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
-        let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
+        let cancelar = UIAlertAction(title: NSLocalizedString("cancelar", comment: "Cancel"), style: .Cancel, handler: nil)
+        let salvar = UIAlertAction(title: NSLocalizedString("salvar", comment: "Save"), style: .Default, handler: { (ACTION) -> Void in
             
             if limiteTxtField.text == "" {
                 
-                let alertaSemNome = UIAlertController(title: nil, message: "Defina um nome para a comanda", preferredStyle: .Alert)
+                let alertaSemNome = UIAlertController(title: nil, message: NSLocalizedString("alerta_nome_comanda", comment: "Alerta nome comanda"), preferredStyle: .Alert)
                 alertaSemNome.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
 
                 view.presentViewController(alertaSemNome, animated: true, completion: nil)

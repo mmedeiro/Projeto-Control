@@ -140,13 +140,13 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
             descricaoTxtField = textField
-            textField.placeholder = "Nome do item"
+            textField.placeholder = NSLocalizedString("item_nome", comment: "Product Name")
             textField.keyboardType = .Default
         }
         
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
             precoTxtField = textField
-            textField.placeholder = "Valor"
+            textField.placeholder = NSLocalizedString("valor", comment: "Price")
             textField.keyboardType = .DecimalPad
         }
         
@@ -154,12 +154,12 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         alertaNovoItem.view.layer.shadowOffset = CGSizeZero
         alertaNovoItem.view.layer.shadowOpacity = 1
         
-        let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
-        let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
+        let cancelar = UIAlertAction(title: NSLocalizedString("cancelar", comment: "Cancel"), style: .Cancel, handler: nil)
+        let salvar = UIAlertAction(title: NSLocalizedString("salvar", comment: "Save"), style: .Default, handler: { (ACTION) -> Void in
             
             if precoTxtField.text == "" || precoTxtField == " "{
                 
-                let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
+                let alertaCampoVazio = UIAlertController(title: nil, message: NSLocalizedString("defina_valor_produto", comment: "Set Value"), preferredStyle: .Alert)
                 alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 
                 self.presentViewController(alertaCampoVazio, animated: true, completion: nil)
@@ -175,7 +175,7 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                 if descricaoTxtField.text != "" {
                     self.produto.nome = descricaoTxtField.text
                 } else  {
-                    self.produto.nome = "-Sem Descrição de gasto-"
+                    self.produto.nome = NSLocalizedString("produto_sem_descricao", comment: "No Description")
                 }
                  if let numFormatado = formatarNumero{
                     self.produto.valor = Double(numFormatado)
@@ -203,12 +203,12 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
     
     //alterar limite
     func valorDoLimite(){
-        let alertaNovoLimite = UIAlertController(title: nil, message: "Defina o limite", preferredStyle: .Alert)
+        let alertaNovoLimite = UIAlertController(title: nil, message: NSLocalizedString("defina_o_limite", comment: "Limit Def"), preferredStyle: .Alert)
         var limiteTxtField = UITextField()
         
         alertaNovoLimite.addTextFieldWithConfigurationHandler { (textField) -> Void in
             limiteTxtField = textField
-            textField.placeholder = "Valor"
+            textField.placeholder = NSLocalizedString("valor", comment: "Price")
             textField.keyboardType = .DecimalPad
         }
         
@@ -216,12 +216,12 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
         alertaNovoLimite.view.layer.shadowOffset = CGSizeZero
         alertaNovoLimite.view.layer.shadowOpacity = 1
         
-        let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
-        let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
+        let cancelar = UIAlertAction(title: NSLocalizedString("cancelar", comment: "Cancel"), style: .Cancel, handler: nil)
+        let salvar = UIAlertAction(title: NSLocalizedString("salvar", comment: "Save"), style: .Default, handler: { (ACTION) -> Void in
             
             if limiteTxtField.text == "" {
                 
-                let alertaSemLimite = UIAlertController(title: nil, message: "Defina o limite de gasto", preferredStyle: .Alert)
+                let alertaSemLimite = UIAlertController(title: nil, message: NSLocalizedString("defina_o_limite", comment: "Def Lim"), preferredStyle: .Alert)
                 alertaSemLimite.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alertaSemLimite, animated: true, completion: nil)
                 
@@ -232,13 +232,13 @@ class PrecoFixoTableViewController: UIViewController,UITableViewDelegate, UITabl
                 if limiteTxtField.text == "0" || limiteTxtField.text == "" {
                     self.buttonFinalizarItem.enabled = false
                     self.buttonAddItem.enabled = false
-                    self.precoEscolhido.text = "R$"
+                    self.precoEscolhido.text = NSLocalizedString("moeda", comment: "$")
                     
                 } else {
                     self.buttonFinalizarItem.enabled = true
                     self.buttonAddItem.enabled = true
                     self.precoFake = formatarNumero!
-                    self.precoEscolhido.text? = "R$ \(self.precoFake)"
+                    self.precoEscolhido.text? = NSLocalizedString("moeda \(self.precoFake)", comment: "$")
                     self.decrementar()
                 }
                 

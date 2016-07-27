@@ -37,6 +37,7 @@
 		4B004C501C9C7911002610C5 /* DefinirLimiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */; };
 		4B004C521C9C91EB002610C5 /* NumberPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C511C9C91EB002610C5 /* NumberPadController.swift */; };
 		4B004C541C9C9988002610C5 /* PrecoIlimitadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */; };
+		4B05AAF21D4803BB00B4C8F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B05AAF41D4803BB00B4C8F2 /* Localizable.strings */; };
 		4B3F613E1C989423008BB972 /* control.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F613C1C989423008BB972 /* control.xcdatamodeld */; };
 		4B3F61451C98950D008BB972 /* Lista+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F61411C98950D008BB972 /* Lista+CoreDataProperties.swift */; };
 		4B3F61461C98950D008BB972 /* Lista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F61421C98950D008BB972 /* Lista.swift */; };
@@ -145,6 +146,9 @@
 		4B004C4F1C9C7911002610C5 /* DefinirLimiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinirLimiteController.swift; sourceTree = "<group>"; };
 		4B004C511C9C91EB002610C5 /* NumberPadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberPadController.swift; sourceTree = "<group>"; };
 		4B004C531C9C9988002610C5 /* PrecoIlimitadoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecoIlimitadoController.swift; sourceTree = "<group>"; };
+		4B05AAF31D4803BB00B4C8F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B05AAF51D4803C100B4C8F2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4B05AAF61D4803C300B4C8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B3F613D1C989423008BB972 /* control.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = control.xcdatamodel; sourceTree = "<group>"; };
 		4B3F61411C98950D008BB972 /* Lista+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lista+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B3F61421C98950D008BB972 /* Lista.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lista.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 				37E08BE51C63BBD500369E84 /* Assets.xcassets */,
 				37E08BE71C63BBD500369E84 /* LaunchScreen.storyboard */,
 				37E08BEA1C63BBD500369E84 /* Info.plist */,
+				4B05AAF41D4803BB00B4C8F2 /* Localizable.strings */,
 			);
 			path = control;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 37E08BD21C63BBD500369E84;
 			productRefGroup = 37E08BDC1C63BBD500369E84 /* Products */;
@@ -491,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E08BE91C63BBD500369E84 /* LaunchScreen.storyboard in Resources */,
+				4B05AAF21D4803BB00B4C8F2 /* Localizable.strings in Resources */,
 				37E08BE61C63BBD500369E84 /* Assets.xcassets in Resources */,
 				37E08BE41C63BBD500369E84 /* Main.storyboard in Resources */,
 			);
@@ -627,6 +634,16 @@
 				4B6333921D399226002D993F /* en */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		4B05AAF41D4803BB00B4C8F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B05AAF31D4803BB00B4C8F2 /* en */,
+				4B05AAF51D4803C100B4C8F2 /* pt-BR */,
+				4B05AAF61D4803C300B4C8F2 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

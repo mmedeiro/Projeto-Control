@@ -115,14 +115,14 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
             descricaoTxtField = textField
-            textField.placeholder = "Nome do item"
+            textField.placeholder = NSLocalizedString("item_nome", comment: "Product Name")
             textField.keyboardType = .Default
             
         }
                 
         alertaNovoItem.addTextFieldWithConfigurationHandler { (textField) -> Void in
             precoTxtField = textField
-            textField.placeholder = "Valor"
+            textField.placeholder = NSLocalizedString("valor", comment: "Value")
             textField.keyboardType = .DecimalPad
         }
         
@@ -130,12 +130,12 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
         alertaNovoItem.view.layer.shadowOffset = CGSizeZero
         alertaNovoItem.view.layer.shadowOpacity = 1
         
-        let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
-        let salvar = UIAlertAction(title: "Salvar", style: .Default, handler: { (ACTION) -> Void in
+        let cancelar = UIAlertAction(title: NSLocalizedString("cancelar", comment: "Cancel"), style: .Cancel, handler: nil)
+        let salvar = UIAlertAction(title: NSLocalizedString("salvar", comment: "Save"), style: .Default, handler: { (ACTION) -> Void in
             
             if precoTxtField.text == "" {
                 
-                let alertaCampoVazio = UIAlertController(title: nil, message: "Defina o valor do produto", preferredStyle: .Alert)
+                let alertaCampoVazio = UIAlertController(title: nil, message: NSLocalizedString("defina_valor_produto", comment: "valor produto"), preferredStyle: .Alert)
                 alertaCampoVazio.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alertaCampoVazio, animated: true, completion: nil)
                 
@@ -151,7 +151,7 @@ class PrecoIlimitadoViewController: UIViewController, UITableViewDataSource, UIT
                     self.produto.nome = descricaoTxtField.text
                 } else {
                     
-                    self.produto.nome = "Produto"
+                    self.produto.nome = NSLocalizedString("produto_sem_descricao", comment: "No desc")
                 }
                 
                 if let numFormatado = formatarNumero{

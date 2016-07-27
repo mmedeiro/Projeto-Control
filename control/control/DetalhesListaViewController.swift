@@ -27,7 +27,7 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
         nomeLista.text = lista.nome?.capitalizedString
         
         let dataEntrega = NSDateFormatter()
-        dataEntrega.dateFormat = "dd/MM/yyyy hh:mm"
+        dataEntrega.dateFormat = NSLocalizedString("data_hora", comment: "data e hora")
         let dataString = dataEntrega.stringFromDate(lista.data!)
 
         dataLista.text = dataString
@@ -44,10 +44,10 @@ class DetalhesListaViewController: UIViewController, UITableViewDataSource, UITa
             valorGasto.text = "Total: \(soma)"
         } else {
             if soma > Double(lista.limite!){
-                valorLimite.text? = "Você ultrapassou seu" + " limite inicial de R$ \(lista.limite!)"
+                valorLimite.text? = NSLocalizedString("ultrapassou_limite", comment: "ultrapassou") + "\(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             } else {
-                valorLimite.text? = "Parabéns, você não ultrapassou \n" + "seu limite de R$ \(lista.limite!)"
+                valorLimite.text? = NSLocalizedString("parabens_limite", comment: "não ultrapassou") + "\(lista.limite!)"
                 valorGasto.text = "Total: \(soma)"
             }
         }

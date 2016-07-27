@@ -30,13 +30,13 @@ class ConfiguracaoTableViewController: UITableViewController, MFMailComposeViewC
     }
     
     @IBAction func apagarTudo(sender: AnyObject) {
-        let alerta = UIAlertController(title: "Atenção", message: "Você tem certeza que deseja apagar todos os seus dados?", preferredStyle: .Alert)
-        let cancelar = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
-        let apagar = UIAlertAction(title: "Apagar", style: .Destructive) { (action) in
+        let alerta = UIAlertController(title: NSLocalizedString("atencao", comment: "atencao"), message: NSLocalizedString("alerta_apaga_tudo", comment: "alerta_msg"), preferredStyle: .Alert)
+        let cancelar = UIAlertAction(title: NSLocalizedString("cancelar", comment: "Cancel"), style: .Cancel, handler: nil)
+        let apagar = UIAlertAction(title: NSLocalizedString("apagar", comment: "apagar"), style: .Destructive) { (action) in
             ListaManager.sharedInstance.deleteAll()
             ListaManager.sharedInstance.save()
             
-            let alertOK = UIAlertController(title: "Sucesso", message: "Seus dados foram excluídos com sucesso", preferredStyle: .Alert)
+            let alertOK = UIAlertController(title: NSLocalizedString("sucesso", comment: "sucesso"), message: NSLocalizedString("alerta_dados_apagados", comment: "msg"), preferredStyle: .Alert)
             let ok = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertOK.addAction(ok)
             self.presentViewController(alertOK, animated: true, completion: nil)
@@ -71,13 +71,13 @@ class ConfiguracaoTableViewController: UITableViewController, MFMailComposeViewC
             let picker = MFMailComposeViewController()
             
             picker.mailComposeDelegate = self
-            picker.setSubject("Aplicativo Minha Comanda")
-            picker.setToRecipients(["amanda96campos@gmail.com"])
-            picker.setMessageBody("Olá, gostaria de informar...", isHTML: true)
+            picker.setSubject(NSLocalizedString("email_assunto", comment: "assunto"))
+            picker.setToRecipients(["amanda96campos@gmail.com", "mariisabele.19@gmail.com"])
+            picker.setMessageBody(NSLocalizedString("email_msg=", comment: "msg"), isHTML: true)
             
             presentViewController(picker, animated: true, completion: nil)
         } else {
-            let alerta = UIAlertController(title: "Erro", message: "Verifique seu email nas configurações", preferredStyle: .Alert)
+            let alerta = UIAlertController(title: NSLocalizedString("erro", comment: "erro"), message: NSLocalizedString("alerta_erro_email", comment: "msg"), preferredStyle: .Alert)
             let ok = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
             
             alerta.addAction(ok)
@@ -91,7 +91,7 @@ class ConfiguracaoTableViewController: UITableViewController, MFMailComposeViewC
     }
     
     func errorURL(){
-        let alerta = UIAlertController(title: "Erro", message: "Não foi possível concluir essa ação, tente novamente mais tarde.", preferredStyle: .Alert)
+        let alerta = UIAlertController(title: NSLocalizedString("erro", comment: "erro"), message: NSLocalizedString("alerta_erro", comment: "msg"), preferredStyle: .Alert)
         let ok = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
         
         alerta.addAction(ok)

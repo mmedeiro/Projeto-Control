@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  control
+
+  Created by Mariana Medeiro on 26/07/16.
+  Copyright © 2016 Amanda Campos. All rights reserved.
+*/
+defina_o_limite ="Defina o Limite de Gasto";
+defina_valor_produto="Defina o valor do produto";
+item_nome="Nome do Item";
+salvar="Salvar";
+cancelar="Cancelar";
+valor="Valor";
+produto_sem_descricao="-Sem Descrição de gasto-";
+moeda="R$";
+nome_comanda="Nome da comanda";
+alerta_nome_comanda="Digite um nome para sua comanda";
+inicial_back_button="Inicial";
+data_hora="MMM d, yyyy hh:mm";
+nenhuma_lista="Você ainda não possui nenhuma lista cadastrada";
+ultrapassou_limite="Você ultrapassou seu \n limite inicial de R$";
+parabens_limite="Parabéns, você não ultrapassou \n seu limite de R$";
+atencao="Atenção";
+alerta_apaga_tudo="Você tem certeza que deseja apagar todos os seus dados?";
+apagar="Apagar";
+sucesso="Sucesso";
+alerta_dados_apagados="Seus dados foram excluídos com sucesso";
+email_assunto="Aplicativo Minha Comanda";
+email_msg="Olá, gostaria de informar...";
+erro="Erro";
+alerta_erro="Não foi possível concluir essa ação, tente novamente mais tarde.";
+alerta_erro_email="Verifique seu email nas configurações";

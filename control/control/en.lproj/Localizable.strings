@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  control
+
+  Created by Mariana Medeiro on 26/07/16.
+  Copyright © 2016 Amanda Campos. All rights reserved.
+*/
+defina_o_limite ="Set Spending Limit";
+defina_valor_produto="Set the value of the product";
+item_nome="Product Name";
+salvar="Save";
+cancelar="Cancel";
+valor="Price";
+produto_sem_descricao="-No Description-";
+moeda="$";
+nome_comanda="List Name";
+alerta_nome_comanda="Enter a name for your list";
+inicial_back_button="Initial";
+data_hora="MMM d, yyyy hh:mm a";
+nenhuma_lista="No Registered List";
+ultrapassou_limite="You have exceeded your \n initial limit of $";
+parabens_limite="Congratulations, you did not exceed \n your limit of $";
+atencao="Warning";
+alerta_apaga_tudo="Are you sure you want to delete all your data?";
+apagar="Delete";
+sucesso="Success";
+alerta_dados_apagados="Your data have been deleted successfully";
+email_assunto="Minha Comanda App";
+email_msg="Hi, I wish to inform...";
+erro="Error";
+alerta_erro="Unable to complete this action, try again later.";
+alerta_erro_email="Check your email in settings.";

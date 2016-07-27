@@ -63,10 +63,10 @@
 "V2U-OD-xYZ.text" = "quantity";
 
 /* Class = "UILabel"; text = "Comanda"; ObjectID = "Vo6-hN-Wga"; */
-"Vo6-hN-Wga.text" = "Comanda";
+"Vo6-hN-Wga.text" = "List";
 
 /* Class = "UILabel"; text = "Comanda"; ObjectID = "YTO-wH-zuP"; */
-"YTO-wH-zuP.text" = "Comanda";
+"YTO-wH-zuP.text" = "List";
 
 /* Class = "UILabel"; text = "Nome produto"; ObjectID = "Z8b-Qd-KIb"; */
 "Z8b-Qd-KIb.text" = "Product Name";
@@ -78,7 +78,7 @@
 "ZaV-g7-fyr.title" = "Spending limit";
 
 /* Class = "UILabel"; text = "Comanda"; ObjectID = "a3a-iW-s0U"; */
-"a3a-iW-s0U.text" = "Comanda";
+"a3a-iW-s0U.text" = "List";
 
 /* Class = "UIButton"; normalTitle = "Avaliar na App Store"; ObjectID = "byW-5m-J4Y"; */
 "byW-5m-J4Y.normalTitle" = "Rate in the AppStore";

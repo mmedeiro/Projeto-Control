@@ -32,7 +32,7 @@ class ListaDeGastosTableViewController: UITableViewController {
         let myBackButton:UIButton = UIButton(type: UIButtonType.Custom)
         myBackButton.addTarget(self, action: #selector(ListaDeGastosTableViewController.popToRoot(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         myBackButton.setImage(img, forState: UIControlState.Normal)
-        myBackButton.setTitle("Inicial", forState: UIControlState.Normal)
+        myBackButton.setTitle(NSLocalizedString("inicial_back_button", comment: "Back"), forState: UIControlState.Normal)
         myBackButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         myBackButton.sizeToFit()
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
@@ -58,7 +58,7 @@ class ListaDeGastosTableViewController: UITableViewController {
             } else {
                 
                 let dataEntrega = NSDateFormatter()
-                dataEntrega.dateFormat = "dd/MM/yyyy hh:mm"
+                dataEntrega.dateFormat = NSLocalizedString("data_hora", comment: "data e hora")
                 let dataString = dataEntrega.stringFromDate(listaIndex.data!)
                 
                 arrayLista.append(listaIndex.nome!)
@@ -86,7 +86,7 @@ class ListaDeGastosTableViewController: UITableViewController {
     func verificarLista(){
         if listas.count == 0{
             labelNenhumaLista.frame = CGRect(x: 0, y: tableView.frame.size.height/2 - 40, width: tableView.frame.size.width, height: 30)
-            labelNenhumaLista.text = "Você ainda não possui nenhuma lista cadastrada"
+            labelNenhumaLista.text = NSLocalizedString("nenhuma_lista", comment: "Sem registro")
             labelNenhumaLista.textAlignment = .Center
             labelNenhumaLista.numberOfLines = 3
             labelNenhumaLista.textColor = UIColor.whiteColor()
