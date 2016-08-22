@@ -22,6 +22,7 @@ Ou seja, o aplicativo foi criado com o propósito de `atender um único usuário
 - [x] Custom Alert 
 - [x] Static and Dynamic Table View Controller
 - [x] MessageUI - MFMailComposeViewController
+- [x] Internacionalização
 
 ### Desenvolvedoras e Design
 Nós, Amanda Campos [@camposmandy](https://github.com/camposmandy) e  Mariana Medeiro [@mmedeiro](https://github.com/mmedeiro), somos as criados e desenvolvedoras deste app.
